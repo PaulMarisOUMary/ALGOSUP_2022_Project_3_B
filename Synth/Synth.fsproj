@@ -6,11 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Compression\Wav.fs" />
     <Compile Include="Sample.fs" />
     <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Compression\" />
   </ItemGroup>
 </Project>
