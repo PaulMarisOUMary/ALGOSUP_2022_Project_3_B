@@ -5,9 +5,9 @@ open XPlot.GoogleCharts
 open System
 
 module Visualization =
-     let Chart datas =
+     let Chart datas xSize ySize =
         let Graph =
             datas 
             |> Chart.Combo
-            |> Chart.WithSize (1200, 250)
+            |> Chart.WithSize (xSize, ySize)
         Chart.Show Graph

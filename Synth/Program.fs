@@ -1,6 +1,6 @@
 ﻿namespace Synth
 
-open Synth
+open Synth.Visualization
 open System
 
 module Program =
@@ -31,7 +31,7 @@ module Program =
         
         let Waves : List<List<float * float>> = [ Sinus; Square; Triangle; Tooth ]
 
-        Synth.Visualization.Chart(Waves)
+        Synth.Visualization.Chart Waves 1200 250
 
 
 
