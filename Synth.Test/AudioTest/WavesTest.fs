@@ -22,7 +22,6 @@ type WavesTest() =
     member x.ShouldReturnToothWaveArray() =
         Assert.IsTrue(true) // start end
 
-
     (*
     let amplitude = 1.
     let frequency = 1.

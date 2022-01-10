@@ -2,8 +2,7 @@
 
 open Synth.Visualization
 open Synth
-
-open System
+open SFML
 
 module Program =
     [<EntryPoint>]
@@ -25,8 +24,8 @@ module Program =
             Wave.Tooth from step until
         ]
 
-        Synth.Visualization.Chart Waves 1200 250
+        //Synth.Visualization.Chart Waves 1200 250
 
-
+        let buffer = new Audio.SoundBuffer("/Users/paulmaris/Desktop/carp.wav")
 
         0
