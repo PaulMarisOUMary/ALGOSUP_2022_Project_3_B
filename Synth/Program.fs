@@ -11,22 +11,22 @@ module Program =
         let (mod) x y=
             (x%y + y)%y
               
-        let a = 2.
-        let b = 1.
+        let amplitude = 1.
+        let frequency = 1.
         let x = 0.
-        let p = Math.PI * b
+        let piFrequency = Math.PI* 2. * frequency
         
         let Sinus = [
-            for x in 0. .. 0.01 .. 20. do yield (x , (a * Math.Sin(x/b)))
+            for x in 0. .. 0.01 .. 20. do yield (x , (amplitude * Math.Sin(x/frequency)))
             ]
         let Square = [
-            for x in 0. .. 0.01 .. 20. do yield (x , if (a * Math.Sin(x/b)) > 0. then a else -a)
+            for x in 0. .. 0.01 .. 20. do yield (x , if (amplitude * Math.Sin(x/frequency)) > 0. then amplitude else -amplitude)
             ]
         let Triangle= [
-            for x in 0. .. 0.01 .. 20. do let f = x/b in yield (x , (4.*a/p)*Math.Abs(((x- p/4.)mod p) - p/2.) - a)//(a*(Math.Abs(f%4.-2.)-1.)))
+            for x in 0. .. 0.01 .. 20. do let f = x/frequency in yield (x , (4.*amplitude/piFrequency)*Math.Abs(((x- piFrequency/4.)mod piFrequency) - piFrequency/2.) - amplitude)//(a*(Math.Abs(f%4.-2.)-1.)))
             ]
         let Tooth = [
-            for x in 0. .. 0.01 .. 20. do yield (x , (a*(((2. * x/p)) mod 2.)-a))
+            for x in 0. .. 0.01 .. 20. do yield (x , (amplitude *(((2. * x/piFrequency)) mod 2.)-amplitude))
             ]
         
         let Waves : List<List<float * float>> = [ Sinus; Square; Triangle; Tooth ]
