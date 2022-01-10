@@ -8,8 +8,6 @@ module Program =
     [<EntryPoint>]
     let main _  =
 
-        printf "Hello world"
-
         let amplitude = 1.
         let frequency = 1.
         let from = 0.
@@ -25,7 +23,16 @@ module Program =
         ]
 
         //Synth.Visualization.Chart Waves 1200 250
+        use buffer = new Audio.SoundBuffer("../../../../Hello.wav")
 
-        let buffer = new Audio.SoundBuffer("/Users/paulmaris/Desktop/carp.wav")
+        use sound = new Audio.Sound(buffer) 
+
+        //sound.Loop <- true
+
+        sound.Volume <- float32 100.
+
+        sound.Play()
+
+        ignore (System.Console.Read())
 
         0

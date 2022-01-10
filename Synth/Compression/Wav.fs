@@ -2,7 +2,7 @@
 
 open System.IO
 
-module Wave =
+module Wav = 
     
 
     
@@ -41,6 +41,7 @@ module Wave =
         writer.Write("data"B)
         writer.Write(data.Length)
         writer.Write(data)
+
 
     let EncodetoWav path data parameters = 
            EncoderWav path data None None None None None
