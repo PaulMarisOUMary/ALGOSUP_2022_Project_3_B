@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="SampleTest.fs" />
     <Compile Include="ProgramTest.fs" />
+    <Compile Include="VisualizationTest\ChartTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,5 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Synth\Synth.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VisualizationTest\" />
   </ItemGroup>
 </Project>
