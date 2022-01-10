@@ -1,7 +1,9 @@
-﻿
-module Wave
+﻿namespace Synth
+
+open System.IO
+
+module Wave =
     
-    open System.IO
 
     
   
@@ -43,4 +45,14 @@ module Wave
     let EncodetoWav path data parameters = 
            EncoderWav path data None None None None None
 
-    let DecodeWav (path:string) = 3
+    let DecodeWav (path:string) = 
+
+        use reader = new BinaryReader(File.Open(path,FileMode.Open,FileAccess.Read))
+
+        raise (System.Exception("Not Implemented"))
+
+        0
+            
+
+
+
