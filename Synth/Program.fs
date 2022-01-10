@@ -2,11 +2,13 @@
 
 open Synth.Visualization
 open Synth
+
 open System
 
 module Program =
     [<EntryPoint>]
     let main _  =
+
         printf "Hello world"
 
         let amplitude = 1.

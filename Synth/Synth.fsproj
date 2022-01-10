@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Compression\Wav.fs" />
     <Compile Include="Sample.fs" />
     <Compile Include="Visualization\Chart.fs" />
     <Compile Include="Audio\Waves.fs" />
