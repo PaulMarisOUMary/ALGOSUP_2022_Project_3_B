@@ -10,16 +10,25 @@
   <ItemGroup>
     <Compile Include="SampleTest.fs" />
     <Compile Include="ProgramTest.fs" />
+    <Compile Include="VisualizationTest\ChartTest.fs" />
+    <Compile Include="Audio\WavesTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="NUnit" Version="3.13.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="FSharp.Core" Version="6.0.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Synth\Synth.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VisualizationTest\" />
+    <Folder Include="Audio\" />
   </ItemGroup>
 </Project>
