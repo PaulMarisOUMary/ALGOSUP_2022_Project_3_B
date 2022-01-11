@@ -2,7 +2,6 @@
 
 open Synth.Visualization
 open Synth
-open SFML
 
 module Program =
     [<EntryPoint>]
@@ -22,17 +21,6 @@ module Program =
             Wave.Tooth from step until
         ]
 
-        //Synth.Visualization.Chart Waves 1200 250
-        use buffer = new Audio.SoundBuffer("../../../../Hello.wav")
-
-        use sound = new Audio.Sound(buffer) 
-
-        //sound.Loop <- true
-
-        sound.Volume <- float32 100.
-
-        sound.Play()
-
-        ignore (System.Console.Read())
+        Synth.Visualization.Chart Waves 1200 250
 
         0

@@ -1,6 +1,6 @@
 ﻿namespace Synth
 
-open SFML.Audio
+open System
 
 type Interpreter =
     member x.Test =
