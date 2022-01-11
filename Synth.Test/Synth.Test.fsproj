@@ -11,7 +11,7 @@
     <Compile Include="SampleTest.fs" />
     <Compile Include="ProgramTest.fs" />
     <Compile Include="VisualizationTest\ChartTest.fs" />
-    <Compile Include="Audio\WavesTest.fs" />
+    <Compile Include="AudioTest\WavesTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VisualizationTest\" />
-    <Folder Include="Audio\" />
+    <Folder Include="AudioTest\" />
   </ItemGroup>
 </Project>
