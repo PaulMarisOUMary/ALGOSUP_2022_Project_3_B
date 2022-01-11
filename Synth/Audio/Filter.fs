@@ -4,7 +4,8 @@ type Filter =
     member x.Amplitude = // Modify the wave’s amplitude by a fixed amount
         0
 
-    member x.Overdriven = // Cut off the wave at specific amplitude to given the “overdriven” often used in rock songs
+    member x.Overdriven amplitude =
+        // Cut off the wave at specific amplitude to given the “overdriven” often used in rock songs
         0
 
     member x.Echo = // Add echo to the sound
