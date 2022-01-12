@@ -5,7 +5,6 @@ type Filter =
         0
 
     static member Overdriven (amplitude : float) (wave : List<float * float>) =
-        // Cut off the wave at specific amplitude to given the “overdriven” often used in rock songs
         [ for x, y in wave do
             if y < -amplitude then yield (x, -amplitude)
             elif y > amplitude then yield (x, amplitude)
