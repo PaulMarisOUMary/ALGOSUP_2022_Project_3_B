@@ -22,7 +22,7 @@
                 | E -> 329.63
                 | F -> 349.23
                 | G -> 392.
-                | DEBUG -> 1 in
+                | DEBUG -> 1. in
 
             match octave with
                 | 0 ->  frequencyBeforeOctave / 16.

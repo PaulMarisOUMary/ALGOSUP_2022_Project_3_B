@@ -13,10 +13,10 @@ module Program =
         let until = 20.
 
         let Waves : List<List<float>> = [
-//            Wave.MakeNote (Wave.Sine) 20 Note.A 0
-//            Wave.MakeNote (Wave.Triangle) 20 Note.A 0
-//            Wave.MakeNote (Wave.Sawtooth) 20 Note.A 0
-            Wave.MakeNote (Wave.Square) 20 Note.A 4
+            Wave.MakeNote (Wave.Sine) 20 Note.DEBUG 1
+            Wave.MakeNote (Wave.Triangle) 20 Note.DEBUG 1
+            Wave.MakeNote (Wave.Sawtooth) 20 Note.DEBUG 1
+            Wave.MakeNote (Wave.Square) 20 Note.DEBUG 1 |> Filter.Overdriven 0.5
         ]
 
         
