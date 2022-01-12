@@ -12,6 +12,7 @@
     <Compile Include="ProgramTest.fs" />
     <Compile Include="VisualizationTest\ChartTest.fs" />
     <Compile Include="AudioTest\WavesTest.fs" />
+    <Compile Include="AudioTest\FilterTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
