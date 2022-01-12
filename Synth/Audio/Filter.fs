@@ -4,7 +4,7 @@ type Filter =
     member x.Amplitude = // Modify the wave’s amplitude by a fixed amount
         0
 
-    static member Overdriven wave amplitude =
+    static member Overdriven (amplitude : float) (wave : List<float * float>) =
         // Cut off the wave at specific amplitude to given the “overdriven” often used in rock songs
         [ for x, y in wave do
             if y < -amplitude then yield (x, -amplitude)

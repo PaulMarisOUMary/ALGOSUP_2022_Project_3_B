@@ -13,14 +13,15 @@ module Program =
         let until = 20.
         let Wave = Waves(amplitude, frequency)
         
-        let Waves : List<List<float * float>> = [
+        let Wavee : List<List<float * float>> = [
             Wave.Sinus from step until ;
             Wave.Square from step until ;
             Wave.Triangle from step until;
             Wave.Tooth from step until
         ]
 
-        let value = Wave.Sinus from step until |> Filter.Overdriven 0.75
+        let TestW = Waves(1.75, frequency)
+        let value = TestW.Tooth from step until |> Filter.Overdriven 0.75
 
 
         Synth.Visualization.Chart [value] 1200 250
