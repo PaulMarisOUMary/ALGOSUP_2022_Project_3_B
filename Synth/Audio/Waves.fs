@@ -3,38 +3,27 @@ namespace Synth
 
 open System
 
-type Waves(amplitude : float, frequency : float) =
-    let amplitude = amplitude
-    let frequency = frequency
-    let piFrequency = Math.PI* 2. * frequency
+module Wave =
+
+    let PI = Math.PI
+    let samplerate = 4000
 
     let (mod) x y=
         (x%y + y)%y
 
-    member x.Sinus from step until =
-        [
-            for x in from .. step .. until do
-                yield (x , (amplitude * Math.Sin(x/frequency)))
-        ]
+           
+    let Sine frequency t = (Math.Sin(2. * PI * frequency * t))
 
-    member x.Square from step until =
-        [
-            for x in from .. step .. until do
-                yield (x , if (amplitude * Math.Sin(x/frequency)) > 0. then amplitude else -amplitude)
-        ]
+    let Square frequency t = if (Math.Sin(2. * PI * frequency * t)) > 0. then 1. else - 1.
 
-    member x.Triangle from step until =
-        [
-            for x in from .. step .. until do
-                let f = x/frequency in
-                    yield (x , (4. * amplitude/piFrequency) * Math.Abs(((x- piFrequency/4.)mod piFrequency) - piFrequency/2.) - amplitude)
-        ]
+    let Triangle frequency t = (4. / frequency ) * Math.Abs(((t - frequency/4.) mod frequency) - frequency/2.) - 1.
 
-    member x.Tooth from step until =
-        [
-            for x in from .. step .. until do
-                yield (x , (amplitude * (((2. * x/piFrequency)) mod 2.) - amplitude))
-        ]
+    let Sawtooth frequency t = ((2. * t / frequency) mod 2.) - 1.
 
-    member x.makeNote wave duration note octave =
-        wave
+    let MakeNote generator duration note octave =
+        let calculatedFrequency = Note.GetFrequency note octave in
+        [
+            for t in 0 .. 1 .. duration * samplerate do 
+                yield float t |> generator calculatedFrequency
+        ]
+       

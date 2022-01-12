@@ -11,7 +11,7 @@
             | F
             | G
 
-        let getfrequency (note:Note) (octave:int) =
+        let GetFrequency (note:Note) (octave:int) =
             let frequencyBeforeOctave = 
                 match note with
                 | A -> 440.
