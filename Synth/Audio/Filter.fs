@@ -1,8 +1,10 @@
 ﻿namespace Synth
 
 module Filter =
-    let Amplitude = // Modify the wave’s amplitude by a fixed amount
-        0
+    let Amplitude (amplitudeChange : float) (wave : List<float * float>) = // Modify the wave’s amplitude by a fixed amount
+        [ for x, y in wave do
+            yield (x, y * amplitudeChange)
+        ]
 
     let Overdriven (amplitude : float) (wave : List<float * float>) =
         [ for x, y in wave do
