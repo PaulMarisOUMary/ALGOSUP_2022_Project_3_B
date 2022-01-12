@@ -10,6 +10,7 @@
             | E
             | F
             | G
+            | DEBUG
 
         let GetFrequency (note:Note) (octave:int) =
             let frequencyBeforeOctave = 
@@ -20,7 +21,9 @@
                 | D -> 293.66
                 | E -> 329.63
                 | F -> 349.23
-                | G -> 392. in
+                | G -> 392.
+                | DEBUG -> 1 in
+
             match octave with
                 | 0 ->  frequencyBeforeOctave / 16.
                 | 1 ->  frequencyBeforeOctave / 8.

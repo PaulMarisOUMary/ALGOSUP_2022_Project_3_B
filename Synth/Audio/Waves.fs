@@ -24,6 +24,6 @@ module Wave =
         let calculatedFrequency = Note.GetFrequency note octave in
         [
             for t in 0 .. 1 .. duration * samplerate do 
-                yield float t |> generator calculatedFrequency
+                yield float t / float samplerate |> generator calculatedFrequency
         ]
        
