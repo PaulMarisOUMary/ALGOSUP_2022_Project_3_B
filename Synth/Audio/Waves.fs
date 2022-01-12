@@ -35,3 +35,6 @@ type Waves(amplitude : float, frequency : float) =
             for x in from .. step .. until do
                 yield (x , (amplitude * (((2. * x/piFrequency)) mod 2.) - amplitude))
         ]
+
+    member x.makeNote wave duration note octave =
+        wave

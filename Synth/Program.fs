@@ -1,6 +1,5 @@
 ﻿namespace Synth
 
-open Synth.Visualization
 open Synth
 
 module Program =
@@ -21,6 +20,9 @@ module Program =
             Wave.Tooth from step until
         ]
 
-        Synth.Visualization.Chart Waves 1200 250
+        let value = Wave.Sinus from step until |> Filter.Overdriven 0.75
+
+
+        Synth.Visualization.Chart [value] 1200 250
 
         0

@@ -4,9 +4,13 @@ type Filter =
     member x.Amplitude = // Modify the wave’s amplitude by a fixed amount
         0
 
-    member x.Overdriven amplitude =
+    static member Overdriven wave amplitude =
         // Cut off the wave at specific amplitude to given the “overdriven” often used in rock songs
-        0
+        [ for x, y in wave do
+            if y < -amplitude then yield (x, -amplitude)
+            elif y > amplitude then yield (x, amplitude)
+            else yield (x, y)
+        ]
 
     member x.Echo = // Add echo to the sound
         0
