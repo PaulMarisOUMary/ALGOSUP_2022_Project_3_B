@@ -26,7 +26,7 @@ type FilterTest() =
     [<TestCase(0.75)>]
     [<TestCase(1.)>]
     [<TestCase(-1.)>]
-    member x.IsValueSuperiorThanOverdrivenParametter(overdrivenValue) =
+    member x.IsValueSuperiorThanOverdrivenParameter(overdrivenValue) =
         // Arrange
         let overdrivenWave = Wave.MakeNote (Wave.Sine) 20. Note.DEBUG 4 |> Filter.Amplitude 4. |> Filter.Overdriven overdrivenValue
         let absOverdrivenValue = Math.Abs(overdrivenValue)
