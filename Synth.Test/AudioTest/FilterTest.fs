@@ -1,6 +1,7 @@
 ﻿namespace Synth.Test.AudioTest
 
 open Synth
+open Synth.Variables
 open System
 open NUnit.Framework
 
@@ -9,7 +10,12 @@ type FilterTest() =
 
     [<Test>]
     member x.AmplitudeTest() =
-        Assert.IsTrue(true)
+        let ampChange = 3.
+        let sampleChange : float = float Variables.sampleRate
+        let Saw = Wave.MakeNote (Wave.Sawtooth) 20. Note.DEBUG 4 |> Filter.Amplitude ampChange
+        Assert.That(Saw.[int (sampleChange * 0.5)], Is.EqualTo(0))
+        Assert.That(Saw.[int (sampleChange * 0.75)], Is.EqualTo(ampChange * 0.5))
+        Assert.That(Saw.[int sampleChange], Is.EqualTo(ampChange * -1.))
 
     [<Test>]
     [<TestCase(1)>]
