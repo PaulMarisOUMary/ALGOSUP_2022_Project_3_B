@@ -1,4 +1,6 @@
-﻿module Variables
+﻿namespace Synth
+
+module Variables =
     
     let DEBUG = false
 
