@@ -8,12 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+	 <Compile Include="Variables.fs" />
     <Folder Include="Compression\" />
     <Folder Include="Visualization\" />
   </ItemGroup>
 	
   <ItemGroup>
-    <Compile Include="Compression\Wav.fs" />
+	<Compile Include="Compression\Wav.fs" />
     <Compile Include="Sample.fs" />
     <Compile Include="Visualization\Chart.fs" />
     <Compile Include="Audio\Notes.fs" />

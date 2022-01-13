@@ -2,11 +2,11 @@
 namespace Synth
 
 open System
+open Variables
 
 module Wave =
 
     let PI = Math.PI
-    let samplerate = 4000
 
     let (mod) x y=
         (x%y + y)%y

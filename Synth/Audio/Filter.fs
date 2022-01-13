@@ -1,4 +1,5 @@
 ﻿namespace Synth
+open Variables
 
 module Filter =
     let Amplitude (amplitudeChange : float) (wave : List<float>) = // Modify the wave’s amplitude by a fixed amount

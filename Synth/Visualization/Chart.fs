@@ -3,6 +3,9 @@
 open XPlot.Plotly
 open XPlot.GoogleCharts
 open System
+open Variables
+
+
 
 module Visualization =
 
@@ -10,7 +13,7 @@ module Visualization =
      
         let Graph =
             datas 
-            |> List.map ( fun l -> List.mapi (fun i x -> (float i / 4000., x)) l)
+            |> List.map ( fun l -> List.mapi (fun i x -> (float i / float samplerate, x)) l)
             |> Chart.Combo
             |> Chart.WithSize (xSize, ySize)
         Chart.Show Graph

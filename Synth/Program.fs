@@ -6,17 +6,11 @@ module Program =
     [<EntryPoint>]
     let main _  =
 
-        let amplitude = 1.
-        let frequency = 1.
-        let from = 0.
-        let step = 0.01
-        let until = 20.
-
         let Waves : List<List<float>> = [
-            Wave.MakeNote (Wave.Sine) 20 Note.DEBUG 1
-            Wave.MakeNote (Wave.Triangle) 20 Note.DEBUG 1
-            Wave.MakeNote (Wave.Sawtooth) 20 Note.DEBUG 1
-            Wave.MakeNote (Wave.Square) 20 Note.DEBUG 1 |> Filter.Overdriven 0.5
+            Wave.MakeNote (Wave.Sine) 20 Note.DEBUG 4
+            Wave.MakeNote (Wave.Triangle) 20 Note.DEBUG 4
+            Wave.MakeNote (Wave.Sawtooth) 20 Note.DEBUG 4
+            Wave.MakeNote (Wave.Square) 20 Note.DEBUG 4 |> Filter.Overdriven 0.5
         ]
 
         
