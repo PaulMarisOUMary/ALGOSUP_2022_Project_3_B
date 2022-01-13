@@ -1,6 +1,6 @@
 ﻿module Variables
     
-    let DEBUG = true
+    let DEBUG = false
 
-    let samplerate = if DEBUG then 40 else 4000
+    let sampleRate = if DEBUG then 40 else 4000
 
