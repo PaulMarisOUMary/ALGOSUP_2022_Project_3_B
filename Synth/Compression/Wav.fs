@@ -1,6 +1,8 @@
 ﻿namespace Synth
 
 open System.IO
+open System
+open Variables
 
 module Wave =
     
@@ -43,15 +45,28 @@ module Wave =
         writer.Write(data)
 
     let EncodetoWav path data parameters = 
-           EncoderWav path data None None None None None
+        if parameters |> List.length = 0 then EncoderWav path data None None None None None else System.Console.Read()
 
     let DecodeWav (path:string) = 
 
         use reader = new BinaryReader(File.Open(path,FileMode.Open,FileAccess.Read))
-
-        raise (System.Exception("Not Implemented"))
-
-        0
+        ignore(reader.ReadChars(4))
+        let len = reader.ReadInt32()
+        ignore(reader.ReadChars(8))
+        let headersize = reader.ReadInt32()
+        let format = reader.ReadInt16()
+        let channel = reader.ReadInt16()
+        sampleRate <- reader.ReadInt32
+        let bitRate = reader.ReadInt16()
+        let blockAlign = reader.ReadInt16()
+        let bitsPerSample = reader.ReadInt16()
+        ignore(reader.ReadChars(4))
+        let datalen = reader.ReadInt32()
+        let mutable data = Array.zeroCreate<byte> datalen
+        reader.Read(data)
+        let wave = Array.zeroCreate<Int16> (datalen / 2)
+        wave |> Array.mapi(fun i x -> BitConverter.ToInt16 (data,i) ) |> Array.map(fun x -> (float x) / 2.)
+       
             
 
 
