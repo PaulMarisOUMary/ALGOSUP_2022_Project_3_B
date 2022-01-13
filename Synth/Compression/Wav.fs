@@ -46,7 +46,7 @@ module Wav =
 
 
     let EncodetoWav path data parameters = 
-        if parameters |> List.length = 0 then EncoderWav path data None None None None None else System.Console.Read()
+        if parameters |> List.length = 0 then EncoderWav path data None None None None None else EncoderWav path data None None None None None 
 
     let DecodeWav (path:string) = 
 
@@ -57,7 +57,7 @@ module Wav =
         let headersize = reader.ReadInt32()
         let format = reader.ReadInt16()
         let channel = reader.ReadInt16()
-        sampleRate <- reader.ReadInt32
+        sampleRate <- reader.ReadInt32()
         let bitRate = reader.ReadInt16()
         let blockAlign = reader.ReadInt16()
         let bitsPerSample = reader.ReadInt16()
