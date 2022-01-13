@@ -20,10 +20,10 @@ module Wave =
 
     let Sawtooth frequency t = ((2. * t / frequency) mod 2.) - 1.
 
-    let MakeNote generator duration note octave =
+    let MakeNote generator (duration:float) note octave =
         let calculatedFrequency = Note.GetFrequency note octave in
         [
-            for t in 0 .. 1 .. duration * samplerate do 
-                yield float t / float samplerate |> generator calculatedFrequency
+            for t in 0. .. 1. .. duration * (float sampleRate) do 
+                yield  t / float sampleRate |> generator calculatedFrequency
         ]
        

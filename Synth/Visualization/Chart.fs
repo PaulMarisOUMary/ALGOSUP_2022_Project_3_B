@@ -13,7 +13,7 @@ module Visualization =
      
         let Graph =
             datas 
-            |> List.map ( fun l -> List.mapi (fun i x -> (float i / float samplerate, x)) l)
+            |> List.map ( fun l -> List.mapi (fun i x -> (float i / float sampleRate, x)) l)
             |> Chart.Combo
             |> Chart.WithSize (xSize, ySize)
         Chart.Show Graph
