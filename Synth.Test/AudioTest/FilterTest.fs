@@ -1,6 +1,7 @@
 ﻿namespace Synth.Test.AudioTest
 
 open Synth
+open Synth.Variables
 open System
 open NUnit.Framework
 
@@ -13,12 +14,25 @@ type FilterTest() =
 
     [<Test>]
     [<TestCase(1)>]
-    [<TestCase(-1)>]
-    member x.IsValueSuperiorThanOverdrivenParametter(overdrivenValue: int) =
-        let overdrivenWave = Wave.MakeNote (Wave.Sine) 20. Note.DEBUG 4
-        //let assertValue = List.contains true overdrivenWave
-        //Assert.IsTrue(assertValue = false)
-        Assert.IsFalse(false)
+    [<TestCase(0.75)>]
+    [<TestCase(1.)>]
+    [<TestCase(-1.)>]
+    member x.IsValueSuperiorThanOverdrivenParametter(overdrivenValue) =
+        // Arrange
+        let overdrivenWave = Wave.MakeNote (Wave.Sine) 20. Note.DEBUG 4 |> Filter.Amplitude 4. |> Filter.Overdriven overdrivenValue
+        let absOverdrivenValue = Math.Abs(overdrivenValue)
+
+        // Act
+        let overdrivenWaveCheck : List<bool> = [
+            for value in overdrivenWave do
+                if value > absOverdrivenValue then yield true
+                elif value < -absOverdrivenValue then yield true
+                else yield false
+        ]
+        let assertValue = List.contains true overdrivenWaveCheck
+
+        // Assert
+        Assert.AreEqual(assertValue, false)
 
     [<Test>]
     member x.EchoTest() =
