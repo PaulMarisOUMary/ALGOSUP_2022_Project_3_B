@@ -1,4 +1,4 @@
-﻿namespace Synth.Test.Audio
+﻿namespace Synth.Test.AudioTest
 
 open System
 open NUnit.Framework

@@ -1,4 +1,6 @@
 ﻿namespace Synth
+
+open System
 open Variables
 
 module Filter =
@@ -8,9 +10,10 @@ module Filter =
         ]
 
     let Overdriven (amplitude : float) (wave : List<float>) =
+        let absAmplitude = Math.Abs(amplitude)
         [ for y in wave do
-            if y < -amplitude then yield -amplitude
-            elif y > amplitude then yield amplitude
+            if y < -absAmplitude then yield -absAmplitude
+            elif y > absAmplitude then yield absAmplitude
             else yield y
         ]
 
