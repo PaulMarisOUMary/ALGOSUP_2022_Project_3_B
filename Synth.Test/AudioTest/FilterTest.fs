@@ -9,8 +9,12 @@ open NUnit.Framework
 type FilterTest() = 
 
     [<Test>]
-    member x.AmplitudeTest() =
-        let ampChange = 3.
+    [<TestCase(1.)>]
+    [<TestCase(2.)>]
+    [<TestCase(3.)>]
+    [<TestCase(1.5)>]
+    [<TestCase(-1.)>]
+    member x.AmplitudeTest(ampChange: float) =
         let sampleChange : float = float Variables.sampleRate
         let Saw = Wave.MakeNote (Wave.Sawtooth) 20. Note.DEBUG 4 |> Filter.Amplitude ampChange
         Assert.That(Saw.[int (sampleChange * 0.5)], Is.EqualTo(0))
