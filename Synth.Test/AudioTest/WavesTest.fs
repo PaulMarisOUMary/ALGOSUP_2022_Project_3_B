@@ -33,7 +33,22 @@ type WavesTest() =
 
     [<Test>]
     member x.ShouldReturnSquareWaveArray() =
-        Assert.IsTrue(true) // no more than 1 and less than -1
+        // Arrange
+        let wave = Wave.MakeNote (Wave.Square) 1. Note.DEBUG 4
+        let sinWave = Wave.MakeNote (Wave.Sine) 1. Note.DEBUG 4
+
+        // Act
+        let checker = [
+            for i in 0 .. (wave.Length - 1) do
+                let sinW = sinWave.[i]
+                let squW = wave.[i]
+                if sinW > 0. then yield (squW = 1.)
+                else yield (squW = -1.)
+        ]
+        let assertValue = List.contains false checker
+
+        // Assert
+        Assert.IsFalse(assertValue)
 
     [<Test>]
     member x.ShouldReturnTriangleWaveArray() =
