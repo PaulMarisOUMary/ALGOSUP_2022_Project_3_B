@@ -25,5 +25,17 @@ module Wave =
                 yield  t / float sampleRate |> generator calculatedFrequency
         ]
 
-    let Combine = // TODO
-        0
+    let Combine(([<ParamArray>] args: List<List<float>>)) = 
+        let maxlength = [ for x in args do yield x.Length ] |> List.max
+        let refactorarraywith0 = [
+            for x in args do
+                [
+                    for y in 0.. 1 ..maxlength-1 do
+                        if y > x.Length-1 then yield 0. else yield x.[y]
+                ]
+        ]
+        [
+             for y in 0.. 1 ..maxlength-1 do
+                [for x in refactorarraywith0 do yield x.[y]] |> List.sum
+                
+        ]
