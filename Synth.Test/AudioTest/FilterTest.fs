@@ -16,7 +16,7 @@ type FilterTest() =
     [<TestCase(-1.)>]
     member x.AmplitudeTest(ampChange: float) =
         let sampleChange : float = float Variables.sampleRate
-        let Saw = Wave.MakeNote (Wave.Sawtooth) 20. Note.DEBUG 4 |> Filter.Amplitude ampChange
+        let Saw = Wave.MakeNote (Wave.Sawtooth) 2. Note.DEBUG 4 |> Filter.Amplitude ampChange
         Assert.That(Saw.[int (sampleChange * 0.5)], Is.EqualTo(0))
         Assert.That(Saw.[int (sampleChange * 0.75)], Is.EqualTo(ampChange * 0.5))
         Assert.That(Saw.[int sampleChange], Is.EqualTo(ampChange * -1.))
@@ -26,9 +26,9 @@ type FilterTest() =
     [<TestCase(0.75)>]
     [<TestCase(1.)>]
     [<TestCase(-1.)>]
-    member x.IsValueSuperiorThanOverdrivenParametter(overdrivenValue) =
+    member x.IsValueSuperiorThanOverdrivenParameter(overdrivenValue) =
         // Arrange
-        let overdrivenWave = Wave.MakeNote (Wave.Sine) 20. Note.DEBUG 4 |> Filter.Amplitude 4. |> Filter.Overdriven overdrivenValue
+        let overdrivenWave = Wave.MakeNote (Wave.Sine) 2. Note.DEBUG 4 |> Filter.Amplitude 4. |> Filter.Overdriven overdrivenValue
         let absOverdrivenValue = Math.Abs(overdrivenValue)
 
         // Act

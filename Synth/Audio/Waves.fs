@@ -1,5 +1,4 @@
-﻿
-namespace Synth
+﻿namespace Synth
 
 open System
 open Variables
@@ -10,8 +9,7 @@ module Wave =
 
     let (mod) x y=
         (x%y + y)%y
-
-           
+      
     let Sine frequency t = (Math.Sin(2. * PI * frequency * t))
 
     let Square frequency t = if (Math.Sin(2. * PI * frequency * t)) > 0. then 1. else - 1.
@@ -26,4 +24,18 @@ module Wave =
             for t in 0. .. 1. .. duration * (float sampleRate) do 
                 yield  t / float sampleRate |> generator calculatedFrequency
         ]
-       
+
+    let Combine(([<ParamArray>] args: List<List<float>>)) = 
+        let maxlength = [ for x in args do yield x.Length ] |> List.max
+        let refactorarraywith0 = [
+            for x in args do
+                [
+                    for y in 0.. 1 ..maxlength-1 do
+                        if y > x.Length-1 then yield 0. else yield x.[y]
+                ]
+        ]
+        [
+             for y in 0.. 1 ..maxlength-1 do
+                [for x in refactorarraywith0 do yield x.[y]] |> List.sum
+                
+        ]
