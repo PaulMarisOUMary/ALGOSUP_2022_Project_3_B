@@ -18,7 +18,6 @@
     <Compile Include="Visualization\Chart.fs" />
     <Compile Include="Audio\Notes.fs" />
     <Compile Include="Audio\Waves.fs" />
-    <Compile Include="Audio\Interpreter.fs" />
     <Compile Include="Audio\Filter.fs" />
     <Compile Include="Audio\Envelope.fs" />
     <Compile Include="Program.fs" />
