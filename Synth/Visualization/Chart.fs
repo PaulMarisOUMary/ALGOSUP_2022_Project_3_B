@@ -5,8 +5,6 @@ open XPlot.GoogleCharts
 open System
 open Variables
 
-
-
 module Visualization =
 
      let Chart datas xSize ySize =

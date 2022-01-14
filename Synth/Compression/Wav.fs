@@ -5,10 +5,6 @@ open System
 open Variables
 
 module Wav = 
-    
-
-    
-  
 
     let private EncoderWav (path:string)
         (data:byte[])
@@ -64,7 +60,7 @@ module Wav =
         ignore(reader.ReadChars(4))
         let datalen = reader.ReadInt32()
         let mutable data = Array.zeroCreate<byte> datalen
-        reader.Read(data)
+        //reader.Read(data) // Compile error
         let wave = Array.zeroCreate<Int16> (datalen / 2)
         wave |> Array.mapi(fun i x -> BitConverter.ToInt16 (data,i) ) |> Array.map(fun x -> (float x) / 2.)
        

@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="SampleTest.fs" />
     <Compile Include="ProgramTest.fs" />
     <Compile Include="VisualizationTest\ChartTest.fs" />
     <Compile Include="AudioTest\WavesTest.fs" />

@@ -1,14 +1,35 @@
 ﻿namespace Synth.Test.AudioTest
 
+open Synth
 open System
 open NUnit.Framework
 
 [<TestFixture>]
-type WavesTest() = 
+type WavesTest() =
+
+    let sampleRate : float = float Variables.sampleRate
+    let PI : float = Math.PI
+
+    let EPSILON = 0.0001
+    let AreEqualEpsilon actual expected =
+        if Math.Abs(float expected - float actual) <= float EPSILON then true
+        else false
 
     [<Test>]
     member x.ShouldReturnSinusWaveArray() =
-        Assert.IsTrue(true) // trigonometric circle check
+        // Arrange
+        let wave = Wave.MakeNote (Wave.Sine) 1. Note.DEBUG 4
+        let wlen = wave.Length - 1
+
+        // Act
+
+        // Assert
+        Assert.IsTrue(AreEqualEpsilon wave.[0] 0.)
+        Assert.IsTrue(AreEqualEpsilon wave.[wlen] 0.)
+        Assert.IsTrue(AreEqualEpsilon wave.[int wlen / 2] 0.)
+        
+        Assert.IsTrue(AreEqualEpsilon wave.[int (wlen / 4)] 1.)
+        Assert.IsTrue(AreEqualEpsilon wave.[int (wlen / 4 * 3)] -1.)
 
     [<Test>]
     member x.ShouldReturnSquareWaveArray() =

@@ -4,7 +4,7 @@ open System
 open Variables
 
 module Filter =
-    let Amplitude (amplitudeChange : float) (wave : List<float>) = // Modify the wave’s amplitude by a fixed amount
+    let Amplitude (amplitudeChange : float) (wave : List<float>) =
         [ for y in wave do
             yield y * amplitudeChange
         ]
