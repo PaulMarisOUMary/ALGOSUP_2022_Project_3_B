@@ -57,6 +57,14 @@ type WavesTest() =
     [<Test>]
     member x.ShouldReturnToothWaveArray() =
         Assert.IsTrue(true) // start end
+        
+    [<Test>]
+    member x.CombineTest() =
+        let floats = [2.0; 3.0; 4.0]
+        let floats2 = [1.0; 5.0; 6.0; 7.0]
+        let floats3 = [8.0; 9.0]
+        let testcombine = Wave.Combine([floats; floats2; floats3])
+        Assert.AreEqual(testcombine, [11.0; 17.0; 10.0; 7.0])
 
     (*
     let amplitude = 1.
