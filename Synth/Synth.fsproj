@@ -3,26 +3,34 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <CSFMLIgnoreAnyCPU>true</CSFMLIgnoreAnyCPU>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="Compression\Wav.fs" />
-    <Compile Include="Sample.fs" />
-    <Compile Include="Visualization\Chart.fs" />
-    <Compile Include="Audio\Waves.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Compression\" />
     <Folder Include="Visualization\" />
-    <Folder Include="Audio\" />
   </ItemGroup>
+	
   <ItemGroup>
+    <Compile Include="Variables.fs" />
+    <Compile Include="Compression\Wav.fs" />
+    <Compile Include="Visualization\Chart.fs" />
+    <Compile Include="Audio\Notes.fs" />
+    <Compile Include="Audio\Waves.fs" />
+    <Compile Include="Audio\Filter.fs" />
+    <Compile Include="Audio\Envelope.fs" />
+    <Compile Include="Program.fs" />
     <PackageReference Include="XPlot.Plotly" Version="4.0.6">
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>
     <PackageReference Include="XPlot.GoogleCharts" Version="3.0.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <PackageReference Include="SFML.Net" Version="2.5.0">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <PackageReference Include="CSFML" Version="2.5.1">
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>
   </ItemGroup>

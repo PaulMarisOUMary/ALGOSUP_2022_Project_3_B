@@ -8,10 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="SampleTest.fs" />
     <Compile Include="ProgramTest.fs" />
     <Compile Include="VisualizationTest\ChartTest.fs" />
-    <Compile Include="Audio\WavesTest.fs" />
+    <Compile Include="AudioTest\WavesTest.fs" />
+    <Compile Include="AudioTest\FilterTest.fs" />
+    <Compile Include="AudioTest\NotesTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VisualizationTest\" />
-    <Folder Include="Audio\" />
+    <Folder Include="AudioTest\" />
   </ItemGroup>
 </Project>
