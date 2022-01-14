@@ -52,11 +52,33 @@ type WavesTest() =
 
     [<Test>]
     member x.ShouldReturnTriangleWaveArray() =
-        Assert.IsTrue(true) // start mid end
+        // Arrange
+        let wave = Wave.MakeNote (Wave.Triangle) 1. Note.DEBUG 4
+        let wlen = wave.Length - 1
+
+        // Act
+
+        // Assert
+        Assert.IsTrue(AreEqualEpsilon wave.[0] 0.)
+        Assert.IsTrue(AreEqualEpsilon wave.[wlen] 0.)
+        Assert.IsTrue(AreEqualEpsilon wave.[int wlen / 2] 0.)
+        
+        Assert.IsTrue(AreEqualEpsilon wave.[int (wlen / 4)] 1.)
+        Assert.IsTrue(AreEqualEpsilon wave.[int (wlen / 4 * 3)] -1.)
 
     [<Test>]
-    member x.ShouldReturnToothWaveArray() =
-        Assert.IsTrue(true) // start end
+    member x.ShouldReturnSawtoothWaveArray() =
+        // Arrange
+        let wave = Wave.MakeNote (Wave.Sawtooth) 1. Note.DEBUG 4
+        let wlen = wave.Length - 1
+
+        // Act
+
+        // Assert
+        Assert.IsTrue(AreEqualEpsilon wave.[0] -1.)
+        Assert.IsTrue(AreEqualEpsilon wave.[wlen / 2] 0.)
+        Assert.IsTrue(AreEqualEpsilon wave.[wlen] -1.)
+        
         
     [<Test>]
     member x.CombineTest() =
@@ -65,19 +87,3 @@ type WavesTest() =
         let floats3 = [8.0; 9.0]
         let testcombine = Wave.Combine([floats; floats2; floats3])
         Assert.AreEqual(testcombine, [11.0; 17.0; 10.0; 7.0])
-
-    (*
-    let amplitude = 1.
-    let frequency = 1.
-    let from = 0.
-    let step = 0.01
-    let until = 20.
-    let Wave = Waves(amplitude, frequency)
-    
-    let Waves : List<List<float * float>> = [
-        Wave.Sinus from step until ;
-        Wave.Square from step until ;
-        Wave.Triangle from step until;
-        Wave.Tooth from step until
-    ]
-    *)

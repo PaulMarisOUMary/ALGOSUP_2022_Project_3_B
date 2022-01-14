@@ -2,7 +2,7 @@
 
 module Variables =
     
-    let DEBUG = false
+    let DEBUG = true
 
-    let mutable sampleRate = if DEBUG then 40 else 4000
+    let mutable sampleRate = if DEBUG then 40 else 8000
 
