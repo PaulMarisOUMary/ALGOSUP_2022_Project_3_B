@@ -32,8 +32,21 @@ module Filter =
             ]
         echowavesum
 
-    let Flange = // A flange effect filter, for a description of this effect see wikipedia: https://en.wikipedia.org/wiki/Flanging
-        0
+    let Flange (wave : List<float>) = // A flange effect filter, for a description of this effect see wikipedia: https://en.wikipedia.org/wiki/Flanging
+        [
+        let maxTimeDelay = 0.003
+        let speed = 1.
+        let mutable currentDelay = 0
+        let maxSampleDelay = int (maxTimeDelay * float sampleRate) //could be error
+        let coefficient = 0.5
+        let mutable currentSin = 0.
+        for i in maxSampleDelay+1..wave.Length-1 do
+            if i < maxSampleDelay+1 then yield wave[i]
+            else
+                currentSin <- abs(sin(2. * Math.PI * (float i) * (speed / (float sampleRate))))
+                currentDelay <- int(currentSin * (float maxSampleDelay))
+                yield (coefficient * wave[i]) + (coefficient * wave[i-currentDelay])
+        ]
 
     let Reverb = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
         0
