@@ -32,19 +32,34 @@ module Filter =
             ]
         echowavesum
 
-    let Flange (wave : List<float>) = // A flange effect filter, for a description of this effect see wikipedia: https://en.wikipedia.org/wiki/Flanging
+    let Flange (wave : List<float>) = // Add flange to the sound 
         [
+        //setting the parameters of the effect
         let maxTimeDelay = 0.003
         let speed = 1.
+
+        //setting the maximum delay depending on samplerate
+        let maxSampleDelay = int (maxTimeDelay * float sampleRate)
         let mutable currentDelay = 0
-        let maxSampleDelay = int (maxTimeDelay * float sampleRate) //could be error
+
+        //setting the coefficient qnd currentSin variables that will be usefull later
+        //currentSine being the Sine function at a point in time
         let coefficient = 0.5
-        let mutable currentSin = 0.
-        for i in maxSampleDelay+1..wave.Length-1 do
+        let mutable currentSine = 0.
+
+        //for each sample 
+        for i in 0..wave.Length-1 do
+
+            //avoid modifying samples before maxDelay+1 to avoid negativ index
             if i < maxSampleDelay+1 then yield wave[i]
             else
-                currentSin <- abs(sin(2. * Math.PI * (float i) * (speed / (float sampleRate))))
-                currentDelay <- int(currentSin * (float maxSampleDelay))
+                //Giving a value to currentSine
+                currentSine <- abs(sin(2. * Math.PI * (float i) * (speed / (float sampleRate))))
+
+                //Calculating the currentDelay from currentSine
+                currentDelay <- int(currentSine * (float maxSampleDelay))
+
+                //Calculating output
                 yield (coefficient * wave[i]) + (coefficient * wave[i-currentDelay])
         ]
 
