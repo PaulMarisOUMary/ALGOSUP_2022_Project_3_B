@@ -2,6 +2,7 @@
 
 open Synth
 open Variables
+open Synth.Songs
 
 module Program =
     [<EntryPoint>]
@@ -12,17 +13,6 @@ module Program =
         ]
         
         //Synth.Visualization.Chart Waves 1200 250
-
-        let mutable MoonTune = Wave.MakeNote (Wave.Sine) 0.5 Note.DEBUG 0
-
-        for i in 0 .. 8 do
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.C i
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.D i 
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.E i
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.F i
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.G i
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.A i
-            MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.B i |> Filter.Amplitude 5.
 
         // set Synth.Variables : samplerate env variable to true to save .Wav
         let bitarray = MoonTune |> List.map (fun (x:float) -> int16 (x * 32767.)) |> List.map(fun x -> System.BitConverter.GetBytes(x)) |>  List.reduce Array.append
