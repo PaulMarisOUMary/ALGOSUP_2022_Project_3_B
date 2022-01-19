@@ -758,3 +758,262 @@ module Songs =
         MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.825 Note.C 4
 
         MainTheme
+
+
+    let Thunder() : float list =
+        let mutable Thunderstruck = Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.G 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.A 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Gd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.A 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Gd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.A 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Gd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.A 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Gd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Fd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.E 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.Dd 5
+        Thunderstruck <- Thunderstruck @ Wave.MakeNote(Wave.Sine) 0.125 Note.B 4
+
+        Thunderstruck
+
+    let Through() : float list = 
+        let mutable ThroughFireAndFlames = Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        //
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames
