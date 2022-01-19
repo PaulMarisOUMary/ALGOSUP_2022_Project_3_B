@@ -15,7 +15,7 @@ module Program =
         //Synth.Visualization.Chart Waves 1200 250
 
         // set Synth.Variables : samplerate env variable to true to save .Wav
-        let bitarray = MoonTune |> List.map (fun (x:float) -> int16 (x * 32767.)) |> List.map(fun x -> System.BitConverter.GetBytes(x)) |>  List.reduce Array.append
+        let bitarray = Zelda()|> List.map (fun (x:float) -> int16 (x * 32767.)) |> List.map(fun x -> System.BitConverter.GetBytes(x)) |>  List.reduce Array.append
 
         Wav.EncodeWav @"../../../test.wav" bitarray
         
