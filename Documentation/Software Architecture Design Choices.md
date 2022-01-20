@@ -4,7 +4,7 @@ Team: Maxime PAGES, Pierre GORIN, Paul MARRIS, Laurent BOUQUIN, Florent HUREAUX,
 
 ## 1. Software Architecture Diagram
 
-![SADC](./SADC.png)
+![SADC](./img/SADC.png)
 
 The program architecture is planned as shown above, first we create Notes which are just frequences, after we associate them with a wave depending on the wanted sound (Sine, Square, ...), then we can apply a filters (Flange, Echo, Reverb, ...) or store some notes in an arrangement wich we can apply filter one, save in a file (mp3, wav, ...) or directly play it.
 
