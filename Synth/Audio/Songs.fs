@@ -946,7 +946,222 @@ module Songs =
         Thunderstruck
 
     let Through() : float list = 
-        let mutable ThroughFireAndFlames = Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        let mutable ThroughFireAndFlames = Wave.MakeNote (Wave.Sine) 0.1 Note.DEBUG 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 3
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.2 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.2 Note.C 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Ad 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
@@ -1039,7 +1254,271 @@ module Songs =
 
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
 
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.4 Note.G 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        //
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        
+        
+        
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.D 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Dd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.F 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Gd 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.Fd 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 5
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.3 Note.Fd 5
 
 
         ThroughFireAndFlames
