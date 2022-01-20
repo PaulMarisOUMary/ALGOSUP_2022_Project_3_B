@@ -1016,4 +1016,30 @@ module Songs =
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
         ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
 
+
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.G 4
+
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+        ThroughFireAndFlames <- ThroughFireAndFlames @ Wave.MakeNote (Wave.Sine) 0.1 Note.C 4
+
+
+
         ThroughFireAndFlames
