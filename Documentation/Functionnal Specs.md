@@ -111,18 +111,33 @@ Anyone interested in creating sounds in a programmable way or incorporate in a p
 
 ## 6. Requirements specs
 
+The entirety of our work is program in F#.
+To run our project, we use .net 6.0 with the help of the IDE Visual Studio Community.
+In term of library, we use : 
+  - SFML (used to play/modify everything related to the sound)
+  - Xplot (used to display our sound wave)
+We also use GitHub as hosting platform for version control and collaboration. Thanks to this, we can work together on projects from anywhere. To split work with all the team member, we use the project section of Github.
 
 ## 7. Solution overview
 
+This project is available for everyone (no matter your knowledge in physics, music or coding).
+The user will have a graphical interface where he can play the sound he want, record it , and dowload it directly on his computer
 
 ## 8. System configurations
 
+This project work essentialy on Windows.
+Some of the functionnality doesn't work on mac (like playing directly from Visual Studio) but we can still download the wav file and play it from another source (for example, using the terminal)
 
-## 9. Non-functional specs
+## 9. Non-functional specs 
 
+// feel like the same as solution overview to me
 
 ## 10. Error reporting and exception handling
+
+All the project is run with Unit Test (Nunit) to assure that every function is working properly no matter the change we've done.
+We also using Github action. // give more information
 
 
 ## 11. Ticketing system requirement
 
+// ???
