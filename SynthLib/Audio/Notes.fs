@@ -20,18 +20,18 @@ module Note =
     let GetFrequency (note:Note) (octave:int) =
         let frequencyBeforeOctave = 
             match note with
-            | C -> 523.25
+            | C -> 523.25 // DO
             | Cd -> 554.37
-            | D -> 587.33
+            | D -> 587.33 // RE
             | Dd -> 622.25
-            | E -> 659.26
-            | F -> 698.46
+            | E -> 659.26 // MI
+            | F -> 698.46 // FA
             | Fd -> 739.99
-            | G -> 783.99
+            | G -> 783.99 // SOL
             | Gd -> 830.61
-            | A -> 880.00
+            | A -> 880.00 // LA
             | Ad -> 932.33
-            | B -> 987.77
+            | B -> 987.77 // SI
             | DEBUG -> 1. in
 
         match octave with

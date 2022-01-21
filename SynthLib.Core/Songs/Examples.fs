@@ -5,22 +5,28 @@ open SynthLib.Audio
 
 module ExampleSongs =
 
+    let note lenght note octave =
+        Wave.MakeNote Wave.Square lenght note octave
+
+    let fullNote = note 1.
+    let halfNote = note 0.5
+    let quarterNote = note 0.25
+    let eightNote = note 0.125
+
     let MoonSong () : float list =
-        let mutable MoonTune = Wave.MakeNote (Wave.Sine) 0.5 Note.C 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.C 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.C 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.D 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 1. Note.E 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 1. Note.D 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.C 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.E 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.D 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 0.5 Note.D 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 1. Note.C 4
-        MoonTune <- MoonTune @ Wave.MakeNote (Wave.Sine) 1. Note.DEBUG 4
-
-        MoonTune
-
+        seq {
+            yield! halfNote Note.C 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.D 4
+            yield! fullNote Note.E 4
+            yield! fullNote Note.D 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.E 4
+            yield! halfNote Note.D 4
+            yield! halfNote Note.D 4
+            yield! fullNote Note.C 4
+        } |> Seq.toList
 
     let PirateOfCaraiban () : float list =
     
