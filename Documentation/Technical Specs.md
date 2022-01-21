@@ -18,11 +18,11 @@ Team: Maxime PAGES, Pierre GORIN, Paul MARRIS, Laurent BOUQUIN, Florent HUREAUX,
 
 ## 1.Project Description
 
- The aim of this project is to create a sound synthesizer that can be used to create programmable music. We were tasked to reach this goal using the F# language, while only using the SFML library if possible |
+ The aim of this project is to create a sound synthesizer that can be used to create programmable music. We were tasked to reach this goal using the F# language, while only using the SFML library if possible.
 
 ## 2.Project Scope
 
- Our Goals are the following: Create sound from our code, being able to apply filters to the aforementioned sound such as reverb, low pass, or echo, and being able to store and read music to the disk as both MP3 and WAV format. However, we don't need to do: A graphical interface and recording sound using the microphone |
+ Our Goals are the following: Create sound from our code, being able to apply filters to the aforementioned sound such as reverb, low pass, or echo, and being able to store and read music to the disk as both MP3 and WAV format. However, we don't need to do: A graphical interface and recording sound using the microphone.
 
 ## 3.High-Level Requirements
 
@@ -38,27 +38,41 @@ Our Software must able to deliver the following:
 
 Our Deliverables are the following:
 
+1. **Create and play basic notes**
+    Delivery date : the 14<sup>th</sup> of January 2022
+2. **Basic filters, envelopes and chord** 
+Delivery date : for the 21<sup>th</sup> of January 2022
+3. **Frequency analysis and advanced filters**
+Delivery date : the 28<sup>th</sup> of January 20022
+4. **MP3 compression** 
+Delivery date : the 11<sup>th</sup> of February 2022
+
 
 
 ## 5.Affected Parties
 
- _List business processes or systems which will be impacted by this project and describe how they will be affected._
+ This project can affect the people who like programming and/or music and that want to progam musics or sounds themselves using the notes.
 
 ## 6.Affected Business Processes or Systems
 
- _Describe any specific components that are excluded from this project._
+Help people that need a library to make music in F#. It can be include in some other projects.
 
 ## 7.Specific Exclusions from Scope
 
-_Describe how you plan to implement the project. For example, will all parts of the project be rolled out at once or will it be incremental? What will be included in each release?_
+The project will be released before the 11<sup>th</sup> of February 2022. The date is not fixed, it can be an hour before or a week. It will depends on when we finish it. If the project is released before the 11<sup>th</sup> of February 2022, we will try to add new functionalities.
 
-## 8.Implementation Plan
+## 8.High-Level Timeline/Schedule
 
- _Include recommendations that lead to your proposed solution. Summarize what you&#39;re proposing to do and how you&#39;re going to meet the goals. You&#39;ll be able to expand on the details within the &#39;Our Proposal&#39; section._
-
-## 9.High-Level Timeline/Schedule
-
-_Describe what the high level timeline/schedule will be to plan, design, develop and deploy the project. Generally, by when do you expect this project to be finished?_
+**Schedule :**
+- <ins>For the 21</ins><sup>th</sup><ins> of January :
+    - Envlopes
+    - Chords
+- <ins>For the 28</ins><sup>th</sup><ins> of January :
+    - Frequency analysis 
+    - Advanced filters (spectroscope, Low Frequncy Oscillator)
+- <ins>For the 11</ins><sup>th</sup><ins> of February :
+    - MP3 compression
+    - MP3 decompression
 
 # Approval and Authority to Proceed
 
