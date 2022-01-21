@@ -11,9 +11,7 @@
   - [6. Requirements specs](#6-requirements-specs)
   - [7. Solution overview](#7-solution-overview)
   - [8. System configurations](#8-system-configurations)
-  - [9. Non-functional specs](#9-non-functional-specs)
-  - [10. Error reporting and exception handling](#10-error-reporting-and-exception-handling)
-  - [11. Ticketing system requirement](#11-ticketing-system-requirement)
+  - [9. Error reporting and exception handling](#10-error-reporting-and-exception-handling)
 
 </details>
 
@@ -128,16 +126,7 @@ The user will have a graphical interface where he can play the sound he want, re
 This project work essentialy on Windows.
 Some of the functionnality doesn't work on mac (like playing directly from Visual Studio) but we can still download the wav file and play it from another source (for example, using the terminal)
 
-## 9. Non-functional specs 
-
-// feel like the same as solution overview to me
-
-## 10. Error reporting and exception handling
+## 9. Error reporting and exception handling
 
 All the project is run with Unit Test (Nunit) to assure that every function is working properly no matter the change we've done.
 We also using Github action. // give more information
-
-
-## 11. Ticketing system requirement
-
-// ???
