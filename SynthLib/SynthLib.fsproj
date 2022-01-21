@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Audio\" />
+    <Folder Include="Compression\" />
+    <Folder Include="Visualization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Variables.fs" />
+    <Compile Include="Visualization\Chart.fs" />
+    <Compile Include="Compression\Wav.fs" />
+    <Compile Include="Audio\Envelope.fs" />
+    <Compile Include="Audio\Filter.fs" />
+    <Compile Include="Audio\Notes.fs" />
+    <Compile Include="Audio\Waves.fs" />
+    <PackageReference Include="XPlot.Plotly" Version="4.0.6">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <PackageReference Include="XPlot.GoogleCharts" Version="3.0.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+  </ItemGroup>
+</Project>
