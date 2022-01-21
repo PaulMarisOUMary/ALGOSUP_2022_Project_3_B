@@ -5,9 +5,7 @@ open SynthLib.Variables
 
 module Filter =
     let Amplitude (amplitudeChange : float) (wave : List<float>) =
-        [ for y in wave do
-            yield y * amplitudeChange
-        ]
+        wave |> List.map (fun x -> x * amplitudeChange)
 
     let Overdriven (amplitude : float) (wave : List<float>) =
         let absAmplitude = Math.Abs(amplitude)

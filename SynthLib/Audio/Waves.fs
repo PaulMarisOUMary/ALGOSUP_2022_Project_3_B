@@ -26,7 +26,7 @@ module Wave =
         ]
 
     let Combine(([<ParamArray>] args: List<List<float>>)) = 
-        let maxlength = [ for x in args do yield x.Length ] |> List.max
+        let maxlength = args |> List.map List.length |> List.max
         let refactorarraywith0 = [
             for x in args do
                 [

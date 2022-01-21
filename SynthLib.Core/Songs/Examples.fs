@@ -6,7 +6,7 @@ open SynthLib.Audio
 module ExampleSongs =
 
     let note lenght note octave =
-        Wave.MakeNote Wave.Square lenght note octave
+        Wave.MakeNote Wave.Sine lenght note octave
 
     let fullNote = note 1.
     let halfNote = note 0.5
