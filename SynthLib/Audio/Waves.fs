@@ -10,7 +10,7 @@ module Wave =
     let (mod) x y=
         (x%y + y)%y
       
-    let Sine frequency t = (Math.Sin(2. * PI * frequency * t))
+    let Sine frequency t = sin(2. * PI * frequency * t)
 
     let Square frequency t = if (Math.Sin(2. * PI * frequency * t)) > 0. then 1. else - 1.
 
