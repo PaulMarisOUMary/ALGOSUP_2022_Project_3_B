@@ -4,7 +4,7 @@ open System
 open SynthLib.Variables
 
 module Envelope =
-    let ADSR (wave : list<float>)=  //ADSR for Attack Decay Sustain and Release
+    let apply (wave : list<float>)=  //ADSR for Attack Decay Sustain and Release
         [
         //Parameter to modify the effect
         let attackTime = 0.1
@@ -23,16 +23,16 @@ module Envelope =
         for index in 0..wave.Length-1 do
             //Attack time
             if index < (int (attackTime * (float wave.Length))) then 
-                output <- ((float index)/(float attackTimeSample)) * wave[index]
+                output <- ((float index)/(float attackTimeSample)) * wave.[index]
             //Decay time
             elif index > attackTimeSample && index < (attackTimeSample+decayTimeSample) then
                 output <- ((float ((float index - float attackTimeSample)/float decayTimeSample)) * (sustainAmplitude-attackAmplitude) + attackAmplitude) * wave[index]
             //Sustain time
             elif index > (attackTimeSample+decayTimeSample) && index < (wave.Length-releaseTimeSample) then
-                output <- sustainAmplitude * wave[index]
+                output <- sustainAmplitude * wave.[index]
             //release time
             elif index > (wave.Length-releaseTimeSample) then
-                output <- (((float wave.Length-1.)-(float index))/(float releaseTimeSample)) * (float wave[index]*sustainAmplitude)
+                output <- (((float wave.Length-1.)-(float index))/(float releaseTimeSample)) * (float wave.[index]*sustainAmplitude)
             
             yield output
 

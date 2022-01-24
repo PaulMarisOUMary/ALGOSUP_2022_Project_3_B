@@ -8,7 +8,7 @@ module Filter =
         wave |> List.map (fun x -> x * amplitudeChange)
 
     let Overdriven (amplitude : float) (wave : List<float>) =
-        wave |> List.map (fun x -> if x < -Math.Abs(amplitude) then -Math.Abs(amplitude) else Math.Abs(amplitude))
+        wave |> List.map (fun x -> if x < -abs(amplitude) then -abs(amplitude) else abs(amplitude))
 
     let Echo (distance : float) (wave : List<float>) = // Add echo to the sound
         let time = (2.0 * distance * 1000.0) / 340.0 // value in ms
