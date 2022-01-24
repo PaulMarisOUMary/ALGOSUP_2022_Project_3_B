@@ -1,5 +1,6 @@
 ﻿namespace SynthLib.Core
 
+open SynthLib.Variables
 open SynthLib.Compression
 open SynthLib.Core.Songs.ExampleSongs
 
@@ -19,6 +20,8 @@ module Program =
         
         Wav.EncodeWav @"../../../../test.wav" bitarray
         
+
+        //let bitarray = PirateOfCaraiban() |> List.map (fun (x:float) -> int16 (x * 32767.)) |> List.toArray
 
         //use buffer = new SFML.Audio.SoundBuffer(bitarray,uint32 1,uint32 sampleRate)
         //use sound = new SFML.Audio.Sound(buffer)

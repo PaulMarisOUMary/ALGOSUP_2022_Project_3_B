@@ -7,6 +7,7 @@ module ExampleSongs =
 
     let note lenght note octave =
         Wave.MakeNote Wave.Sine lenght note octave
+        |> Envelope.apply
 
     let fullNote = note 1.
     let halfNote = note 0.5
@@ -25,8 +26,8 @@ module ExampleSongs =
             yield! halfNote Note.E 4
             yield! halfNote Note.D 4
             yield! halfNote Note.D 4
-            yield! fullNote Note.REST 4
             yield! fullNote Note.C 4
+            yield! fullNote Note.REST 4
         } |> Seq.toList
 
     let PirateOfCaraiban () : float list =
