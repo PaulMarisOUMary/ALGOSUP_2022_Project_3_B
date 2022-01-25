@@ -1,8 +1,10 @@
 ﻿namespace SynthLib.Core
 
+open System
 open SynthLib.Variables
 open SynthLib.Compression
 open SynthLib.Core.Songs.ExampleSongs
+open SynthLib.Audio
 
 module Program =
     [<EntryPoint>]
@@ -16,8 +18,8 @@ module Program =
 
 
         // set Synth.Variables : samplerate env variable to true to save .Wav
-        let bitarray = Thunder() |> Wav.ToByteArray
-        
+        let bitarray = SynthLib.Audio.Wave.Combine([Wave.MakeNote (Wave.Square) 2. Note.E 4; Wave.MakeNote (Wave.Square) 2. Note.C 4]) |> Wav.ToByteArray
+
         Wav.EncodeWav @"../../../../test.wav" bitarray
         
 

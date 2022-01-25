@@ -83,8 +83,10 @@ type WavesTest() =
         
     [<Test>]
     member x.CombineTest() =
-        let floats = [2.0; 3.0; 4.0]
-        let floats2 = [1.0; 5.0; 6.0; 7.0]
-        let floats3 = [8.0; 9.0]
-        let testcombine = Wave.Combine([floats; floats2; floats3])
-        Assert.AreEqual(testcombine, [11.0; 17.0; 10.0; 7.0])
+        let floats = [0.4; 0.2; 0.6]
+        let floats2 = [0.2; 0.7; 0.3; 0.5]
+        let floats3 = [0.6; 0.8]
+        let floats4 = [0.2]
+        let testcombine = Wave.Combine([floats; floats2; floats3; floats4])
+        Console.WriteLine(testcombine)
+        Assert.AreEqual([for i in testcombine -> Math.Round(i, 4)], [0.3500; 0.4250; 0.2250; 0.1250])

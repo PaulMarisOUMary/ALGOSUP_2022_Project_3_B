@@ -36,6 +36,11 @@ module Wave =
         ]
         [
              for y in 0.. 1 ..maxlength-1 do
-                [for x in refactorarraywith0 do yield x.[y]] |> List.sum
+                let listtosum = [for x in refactorarraywith0 do yield x.[y]]
+                listtosum |> List.map(fun x -> x/float listtosum.Length)|> List.sum
                 
         ]
+       (* [
+             for x in result do if x <> 0. then yield x / float args.Length
+        ]
+        *)
