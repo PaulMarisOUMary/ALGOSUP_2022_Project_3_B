@@ -13,6 +13,7 @@
   <ItemGroup>
     <Compile Include="Variables.fs" />
     <Compile Include="Visualization\Chart.fs" />
+    <Compile Include="Visualization\Spectroscope.fs" />
     <Compile Include="Compression\Wav.fs" />
     <Compile Include="Audio\Envelope.fs" />
     <Compile Include="Audio\Filter.fs" />

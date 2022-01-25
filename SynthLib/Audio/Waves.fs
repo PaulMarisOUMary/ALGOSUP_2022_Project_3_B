@@ -10,7 +10,7 @@ module Wave =
     let (mod) x y=
         (x%y + y)%y
       
-    let Sine frequency t = (Math.Sin(2. * PI * frequency * t))
+    let Sine frequency t = sin(2. * PI * frequency * t)
 
     let Square frequency t = if (Math.Sin(2. * PI * frequency * t)) > 0. then 1. else - 1.
 
@@ -26,7 +26,7 @@ module Wave =
         ]
 
     let Combine(([<ParamArray>] args: List<List<float>>)) = 
-        let maxlength = [ for x in args do yield x.Length ] |> List.max
+        let maxlength = args |> List.map List.length |> List.max
         let refactorarraywith0 = [
             for x in args do
                 [
@@ -36,6 +36,11 @@ module Wave =
         ]
         [
              for y in 0.. 1 ..maxlength-1 do
-                [for x in refactorarraywith0 do yield x.[y]] |> List.sum
+                let listtosum = [for x in refactorarraywith0 do yield x.[y]]
+                listtosum |> List.map(fun x -> x/float listtosum.Length)|> List.sum
                 
         ]
+       (* [
+             for x in result do if x <> 0. then yield x / float args.Length
+        ]
+        *)
