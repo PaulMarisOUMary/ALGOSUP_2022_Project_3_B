@@ -6,9 +6,18 @@ open SynthLib.Audio
 module ExampleSongs =
 
     let note lenght note octave =
-        Wave.MakeNote Wave.Square lenght note octave
-        |> Envelope.apply 0.20 0.1 0.45 0.8
-        |> Filter.Flange
+        Wave.MakeNote Wave.Triangle lenght note octave
+        |> Envelope.apply 0.01 0.1 0.01 0.8
+        //|> Filter.Flange
+
+    let BPM = 160.
+    let timeNote = 1./(BPM/60.)
+    let round = 4. * timeNote
+    let white = 2. * timeNote
+    let black = timeNote
+    let crooked = timeNote / 2.
+    let semiCrooked = timeNote / 4.
+
 
     let fullNote = note 1.
     let halfNote = note 0.5
@@ -30,7 +39,6 @@ module ExampleSongs =
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
         } |> Seq.toList
-
 
     let MarioTheme () : float list = 
         seq {
@@ -1095,3 +1103,36 @@ module ExampleSongs =
             yield! eightNote Note.B 4
 
         } |> Seq.toList
+
+
+    let RunningInThe90 () : float list =
+        seq {
+            
+            for i in 0..2 do
+                for j in 0..1 do
+                    yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+                    yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+
+                    yield! note black Note.REST 4
+
+                yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+                yield! Wave.Combine ([note crooked Note.As 4;note crooked Note.D 5])
+                yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+                yield! Wave.Combine ([note crooked Note.Gs 4;note crooked Note.C 5])
+                yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+
+            yield! note crooked Note.A 4
+            yield! note semiCrooked Note.A 4
+            yield! note semiCrooked Note.E 5
+            yield! note semiCrooked Note.D 5
+            yield! note semiCrooked Note.C 5
+            yield! note crooked Note.G 4
+
+
+
+
+
+        }|>Seq.toList
