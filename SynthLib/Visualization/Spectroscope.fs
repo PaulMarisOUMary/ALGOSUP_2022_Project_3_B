@@ -30,9 +30,10 @@ module Spectroscope =
         let res = all / count
         res
 
-    let rec pow2 x n = match x with
+    let rec pow2 x n =
+        match x with
         | _ when n*2 > x -> n
-        | _              -> pow2 x (2*n)
+        | _ -> pow2 x (2*n)
 
     let rec fft = function
         | []  -> []
