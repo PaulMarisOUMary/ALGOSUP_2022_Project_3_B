@@ -129,4 +129,4 @@ Some of the functionnality doesn't work on mac (like playing directly from Visua
 ## 9. Error reporting and exception handling
 
 All the project is run with Unit Test (Nunit) to assure that every function is working properly no matter the change we've done.
-We also using Github action. // give more information
+We also using Github action.
