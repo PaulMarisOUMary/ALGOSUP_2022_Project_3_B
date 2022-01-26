@@ -14,9 +14,12 @@ module Wave =
 
     let Square frequency t = if (Math.Sin(2. * PI * frequency * t)) > 0. then 1. else - 1.
 
-    let Triangle frequency t = (4. / frequency ) * Math.Abs(((t - frequency/4.) mod frequency) - frequency/2.) - 1.
+    let Triangle frequency t = let p = 1./frequency in (4. / p) * Math.Abs(((t - p/4.) mod p) - p/2.) - 1.
 
-    let Sawtooth frequency t = ((2. * t / frequency) mod 2.) - 1.
+    let Sawtooth frequency t = ((2. * t * frequency) mod 2.) - 1.
+
+   // let Triangle frequency t = (8./(PI*PI))*(cos(2.0*PI*t*frequency)+ (1./9.)* cos(2.0*PI*t*frequency*3.)+ (1./25.)* cos(2.0*PI*t*frequency*5.))
+
 
     let MakeNote generator (duration:float) note octave =
         let calculatedFrequency = Note.GetFrequency note octave in

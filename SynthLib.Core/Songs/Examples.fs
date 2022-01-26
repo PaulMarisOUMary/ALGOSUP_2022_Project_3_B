@@ -7,7 +7,8 @@ module ExampleSongs =
 
     let note lenght note octave =
         Wave.MakeNote Wave.Square lenght note octave
-        |> Envelope.apply 0.1 0.01 0.1 0.8
+        |> Envelope.apply 0.20 0.1 0.45 0.8
+        |> Filter.Flange
 
     let fullNote = note 1.
     let halfNote = note 0.5
@@ -28,6 +29,150 @@ module ExampleSongs =
             yield! halfNote Note.D 4
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
+        } |> Seq.toList
+
+
+    let MarioTheme () : float list = 
+        seq {
+            
+            yield! note 1. Note.REST 4
+
+            yield! Wave.Combine ([ note 0.15 Note.Fs 4; note 0.15 Note.E 4 ])
+            yield! Wave.Combine ([ note 0.15 Note.Fs 4; note 0.15 Note.E 4 ])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.15 Note.Fs 4; note 0.15 Note.E 4 ])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.15 Note.Fs 4; note 0.15 Note.C 4 ])
+            yield! Wave.Combine ([ note 0.3 Note.Fs 4; note 0.3 Note.E 4 ])
+
+            yield! Wave.Combine ([ note 0.3 Note.G 4; note 0.3 Note.B 4; note 0.3 Note.G 5])
+            yield! note 0.3 Note.REST 4
+            yield! note 0.3 Note.G 4
+            yield! note 0.3 Note.REST 4
+
+            yield! Wave.Combine ([ note 0.3 Note.E 4; note 0.3 Note.C 5])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.G 4])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.3 Note.G 3; note 0.3 Note.E 4])
+            yield! note 0.15 Note.REST 4
+
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.A 4])
+            yield! Wave.Combine ([ note 0.3 Note.D 4; note 0.3 Note.B 4])
+            yield! Wave.Combine ([ note 0.15 Note.Cs 4; note 0.15 Note.As 4])
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.A 4])
+
+            yield! Wave.Combine ([ note 0.25 Note.C 4; note 0.25 Note.G 4])
+            yield! Wave.Combine ([ note 0.25 Note.G 4; note 0.25 Note.E 5])
+            yield! Wave.Combine ([ note 0.25 Note.B 4; note 0.25 Note.G 5])
+            yield! Wave.Combine ([ note 0.3 Note.C 5; note 0.3 Note.A 5])
+            yield! Wave.Combine ([ note 0.15 Note.A 4; note 0.15 Note.F 5])
+            yield! Wave.Combine ([ note 0.15 Note.B 4; note 0.15 Note.G 5])
+
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.3 Note.A 4; note 0.3 Note.E 5])
+            yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.C 5])
+            yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.D 5])
+            yield! Wave.Combine ([ note 0.3 Note.D 4; note 0.3 Note.B 4])
+
+            yield! Wave.Combine ([ note 0.3 Note.E 4; note 0.3 Note.C 5])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.G 4])
+            yield! note 0.15 Note.REST 4
+            yield! Wave.Combine ([ note 0.3 Note.G 3; note 0.3 Note.E 4])
+            yield! note 0.15 Note.REST 4
+
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.A 4])
+            yield! Wave.Combine ([ note 0.3 Note.D 4; note 0.3 Note.B 4])
+            yield! Wave.Combine ([ note 0.15 Note.Cs 4; note 0.15 Note.As 4])
+            yield! Wave.Combine ([ note 0.3 Note.C 4; note 0.3 Note.A 4])
+
+            yield! Wave.Combine ([ note 0.25 Note.C 4; note 0.25 Note.G 4])
+            yield! Wave.Combine ([ note 0.25 Note.G 4; note 0.25 Note.E 5])
+            yield! Wave.Combine ([ note 0.25 Note.B 4; note 0.25 Note.G 5])
+            yield! Wave.Combine ([ note 0.3 Note.C 5; note 0.3 Note.A 5])
+            yield! Wave.Combine ([ note 0.15 Note.A 4; note 0.15 Note.F 5])
+            yield! Wave.Combine ([ note 0.15 Note.B 4; note 0.15 Note.G 5])
+
+            yield! note 0.15 Note.REST 4
+
+            yield! Wave.Combine ([ note 0.3 Note.A 4; note 0.3 Note.E 5])
+            yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.C 5])
+            yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.D 5])
+            yield! Wave.Combine ([ note 0.3 Note.D 4; note 0.3 Note.B 4])
+
+            yield! note 0.15 Note.REST 4
+
+//-------------------------------------------------------------------
+            for i in 0..1 do
+                yield! note 0.3 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.15 Note.E 5; note 0.15 Note.G 5])
+                yield! Wave.Combine ([ note 0.15 Note.Ds 5; note 0.15 Note.Fs 5])
+                yield! Wave.Combine ([ note 0.15 Note.D 5; note 0.15 Note.F 5])
+                yield! Wave.Combine ([ note 0.3 Note.B 4; note 0.3 Note.Ds 5])
+                yield! Wave.Combine ([ note 0.15 Note.C 5; note 0.15 Note.E 5])
+                
+                yield! note 0.15 Note.REST 4
+                
+                yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.Gs 4])
+                yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.A 4])
+                yield! Wave.Combine ([ note 0.15 Note.G 4; note 0.15 Note.C 4])
+
+                yield! note 0.15 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.15 Note.C 4; note 0.15 Note.A 4])
+                yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.C 5])
+                yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.D 5])
+
+                yield! note 0.3 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.15 Note.E 5; note 0.15 Note.G 5])
+                yield! Wave.Combine ([ note 0.15 Note.Ds 5; note 0.15 Note.Fs 5])
+                yield! Wave.Combine ([ note 0.15 Note.D 5; note 0.15 Note.F 5])
+                yield! Wave.Combine ([ note 0.3 Note.B 4; note 0.3 Note.Ds 5])
+                yield! Wave.Combine ([ note 0.15 Note.C 5; note 0.15 Note.E 5])
+
+                yield! note 0.15 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.3 Note.F 5; note 0.3 Note.G 5; note 0.3 Note.C 6])
+                yield! Wave.Combine ([ note 0.15 Note.F 5; note 0.15 Note.G 5; note 0.15 Note.C 6])
+                yield! Wave.Combine ([ note 0.3 Note.F 5; note 0.3 Note.G 5; note 0.3 Note.C 6])
+
+                yield! note 0.3 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.15 Note.E 5; note 0.15 Note.G 5])
+                yield! Wave.Combine ([ note 0.15 Note.Ds 5; note 0.15 Note.Fs 5])
+                yield! Wave.Combine ([ note 0.15 Note.D 5; note 0.15 Note.F 5])
+                yield! Wave.Combine ([ note 0.3 Note.B 4; note 0.3 Note.Ds 5])
+                yield! Wave.Combine ([ note 0.15 Note.C 5; note 0.15 Note.E 5])
+                
+                yield! note 0.15 Note.REST 4
+                
+                yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.Gs 4])
+                yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.A 4])
+                yield! Wave.Combine ([ note 0.15 Note.G 4; note 0.15 Note.C 4])
+
+                yield! note 0.15 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.15 Note.C 4; note 0.15 Note.A 4])
+                yield! Wave.Combine ([ note 0.15 Note.E 4; note 0.15 Note.C 5])
+                yield! Wave.Combine ([ note 0.15 Note.F 4; note 0.15 Note.D 5])
+
+                yield! note 0.3 Note.REST 4
+
+                yield! Wave.Combine ([ note 0.3 Note.Gs 4; note 0.3 Note.Ds 5])
+                yield! note 0.15 Note.REST 4
+                yield! Wave.Combine ([ note 0.3 Note.F 4; note 0.3 Note.D 5])
+                yield! note 0.15 Note.REST 4
+                yield! Wave.Combine ([ note 0.3 Note.E 4; note 0.3 Note.C 5])
+
+                yield! note 0.3 Note.REST 4
+
+
+            yield! note 1.2 Note.REST 4
+
+
         } |> Seq.toList
 
     let PirateOfCaraiban () : float list =
@@ -201,7 +346,6 @@ module ExampleSongs =
     
         }|>Seq.toList
 
-     
     let Doom () : float list =
         
         seq{
@@ -505,271 +649,267 @@ module ExampleSongs =
 
         }|>Seq.toList
 
-(*
     let Zelda () : float list =
-        let mutable MainTheme = Wave.MakeNote (Wave.Sine) halfNote Note.REST 0
+        seq {
+            yield! fullNote Note.C 4
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.As 3
+            yield! eightNote Note.Gs 3
+            yield! fullNote Note.As 3
+            yield! fullNote Note.C 4
+            yield! quarterNote Note.Gs 3
+            yield! quarterNote Note.Gs 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.B 3
+            yield! eightNote Note.A 3
+            yield! fullNote Note.B 3
+            yield! eightNote Note.REST 0
+            yield! quarterNote Note.Ds 2
+            yield! halfNote Note.REST 0
+            yield! quarterNote Note.Ds 2
+            yield! halfNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.375 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.375 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! note 0.0625 Note.REST 0
+            yield! eightNote Note.C 5
+            yield! eightNote Note.C 5
+            yield! eightNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! quarterNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! halfNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.Gs 4
+            yield! note 0.375 Note.G 4
+            yield! note 0.375 Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! eightNote Note.Ds 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3 
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! quarterNote Note.Ds 5
+            yield! quarterNote Note.D 5
+            yield! quarterNote Note.B 4
+            yield! eightNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.C 5
+            yield! quarterNote Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.C 5
+            yield! quarterNote Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! quarterNote Note.E 4
+            yield! note 0.75 Note.F 4
+            yield! halfNote Note.Gs 4
+            yield! halfNote Note.G 4
+            yield! note 0.75 Note.Ds 4
+            yield! halfNote Note.C 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.375 Note.C 4
+            yield! note 0.375 Note.G 3
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! note 0.625 Note.G 4
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! note 0.625 Note.G 4
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! eightNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.1825 Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.75 Note.G 4
+            yield! halfNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! eightNote Note.F 4
+            yield! eightNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! eightNote Note.Ds 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! halfNote Note.C 4
+            yield! note 0.75 Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 4
+            yield! halfNote Note.D 4
+            yield! halfNote Note.Ds 4
+            yield! note 0.625 Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! halfNote Note.C 5
+            yield! halfNote Note.B 4
+            yield! note 0.625 Note.G 4
+            yield! halfNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.B 4
+            yield! note 0.625 Note.G 4
+            yield! halfNote Note.E 4
+            yield! note 0.625 Note.F 4
+            yield! halfNote Note.Gs 4
+            yield! halfNote Note.G 4
+            yield! note 0.625 Note.Ds 4
+            yield! halfNote Note.C 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.625 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.825 Note.C 4
+        } |> Seq.toList
 
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote125 Note.As 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Gs 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Gs 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.B 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.A 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote125 Note.B 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 2
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 2
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.A 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 3 
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.D 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.A 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) fullNote Note.REST 0
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) note 0.1825 Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.A 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.As 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.375 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 5
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.B 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.F 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.Gs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.Ds 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.C 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.D 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.E 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.625 Note.Fs 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) halfNote Note.A 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 4
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) eightNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) quarterNote Note.G 3
-        MainTheme <- MainTheme @ Wave.MakeNote (Wave.Sine) 0.825 Note.C 4
-
-        MainTheme
-
-        *)
     let Thunder() : float list =
         seq {
             yield! eightNote Note.Ds 5
@@ -955,541 +1095,3 @@ module ExampleSongs =
             yield! eightNote Note.B 4
 
         } |> Seq.toList
-
-    (*
-    let Through() : float list = 
-        
-        seq{
-            yield! note 0.1 Note.REST 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 3
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 3
-
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.As 4
-            yield! note 0.2 Note.As 4
-            yield! note 0.2 Note.C 5
-            yield! note 0.1 Note.As 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-        
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4        
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-        
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-        
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.4 Note.G 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-        
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4 
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-        
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.Ds 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-        
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4
-
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.F 4
-
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.C 4       
-        
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.C 4
-            yield! note 0.1 Note.D 4
-            yield! note 0.1 Note.Ds 4
-            yield! note 0.1 Note.F 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 4
-            yield! note 0.1 Note.Gs 4
-            yield! note 0.1 Note.G 4
-
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.1 Note.Fs 5
-            yield! note 0.1 Note.G 5
-            yield! note 0.3 Note.Fs 5
-
-        }|> Seq.toList
-        *)
-        
