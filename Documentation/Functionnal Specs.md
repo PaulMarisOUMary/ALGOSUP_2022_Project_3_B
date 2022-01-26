@@ -57,16 +57,16 @@ let player = Player.Play(tune, Repeat = true)
 More details about the project can be found in the [F# Project - Sound Synthesis.pdf](https://github.com/PaulMarisOUMary/ALGOSUP_2022_Project_3_B/blob/main/Documentation/F%23%20Project%20-%20Sound%20Synthesis.pdf) document.
 
 ## 1. Stakeholders
-| Team             | Roles                         |
-| ---------------- | ----------------------------- |
-| Paul MARIS       | Project manager               |
-| Maxime PAGES     | Tech lead                     |
-| Laurent BOUQUIN  | Team member                   |
-| Florent HUREAUX  | Team member                   |
-| Arthur LEMOINE   | Team member                   |
-| Pierre GORIN     | Team member                   |
-| Robert PICKERING | Consultant in used technology |
-| Algosup          | Customers                     |
+| Team             | Roles              |
+| ---------------- | -------------------|
+| Paul MARIS       | Project manager    |
+| Maxime PAGES     | Tech lead          |
+| Laurent BOUQUIN  | Team member        |
+| Florent HUREAUX  | Team member        |
+| Arthur LEMOINE   | Team member        |
+| Pierre GORIN     | Team member        |
+| Robert PICKERING | Tech consultant    |
+| Algosup          | Customers          |
 
 ## 2. Project target
 Anyone interested in creating sounds in a programmable way or incorporate in a program should be able easily to use this project. 
