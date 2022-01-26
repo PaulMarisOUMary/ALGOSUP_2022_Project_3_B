@@ -175,7 +175,6 @@ module ExampleSongs =
 
         } |> Seq.toList
 
-(*
     let PirateOfCaraiban () : float list =
         seq {
             yield! quarterNote Note.D 4
@@ -347,7 +346,6 @@ module ExampleSongs =
     
         }|>Seq.toList
 
-     
     let Doom () : float list =
         
         seq{
@@ -650,272 +648,268 @@ module ExampleSongs =
             yield! halfNote Note.A 3
 
         }|>Seq.toList
-*)
-(*
+
     let Zelda () : float list =
-        let mutable MainTheme = note halfNote Note.REST 0
+        seq {
+            yield! fullNote Note.C 4
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.As 3
+            yield! eightNote Note.Gs 3
+            yield! fullNote Note.As 3
+            yield! fullNote Note.C 4
+            yield! quarterNote Note.Gs 3
+            yield! quarterNote Note.Gs 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.B 3
+            yield! eightNote Note.A 3
+            yield! fullNote Note.B 3
+            yield! eightNote Note.REST 0
+            yield! quarterNote Note.Ds 2
+            yield! halfNote Note.REST 0
+            yield! quarterNote Note.Ds 2
+            yield! halfNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.375 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.375 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! note 0.0625 Note.REST 0
+            yield! eightNote Note.C 5
+            yield! eightNote Note.C 5
+            yield! eightNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! quarterNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! halfNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.Gs 4
+            yield! note 0.375 Note.G 4
+            yield! note 0.375 Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! eightNote Note.Ds 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.375 Note.C 4
+            yield! halfNote Note.G 3 
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.0625 Note.REST 0
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! quarterNote Note.Ds 5
+            yield! quarterNote Note.D 5
+            yield! quarterNote Note.B 4
+            yield! eightNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.C 5
+            yield! quarterNote Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.C 5
+            yield! quarterNote Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! quarterNote Note.E 4
+            yield! note 0.75 Note.F 4
+            yield! halfNote Note.Gs 4
+            yield! halfNote Note.G 4
+            yield! note 0.75 Note.Ds 4
+            yield! halfNote Note.C 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.375 Note.C 4
+            yield! note 0.375 Note.G 3
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! note 0.625 Note.G 4
+            yield! quarterNote Note.REST 0
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! fullNote Note.REST 0
+            yield! halfNote Note.C 4
+            yield! note 0.625 Note.G 4
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 5
+            yield! eightNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.1825 Note.As 4
+            yield! eightNote Note.Gs 4
+            yield! note 0.75 Note.G 4
+            yield! halfNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! eightNote Note.F 4
+            yield! eightNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! quarterNote Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! eightNote Note.Ds 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.F 4
+            yield! quarterNote Note.Ds 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.75 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! halfNote Note.C 4
+            yield! note 0.75 Note.G 3
+            yield! quarterNote Note.C 4
+            yield! eightNote Note.C 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! eightNote Note.F 4
+            yield! note 0.75 Note.G 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 4
+            yield! eightNote Note.Gs 4
+            yield! eightNote Note.As 4
+            yield! note 0.75 Note.C 4
+            yield! halfNote Note.D 4
+            yield! halfNote Note.Ds 4
+            yield! note 0.625 Note.B 4
+            yield! note 0.375 Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! halfNote Note.C 5
+            yield! halfNote Note.B 4
+            yield! note 0.625 Note.G 4
+            yield! halfNote Note.G 4
+            yield! note 0.75 Note.Gs 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.B 4
+            yield! note 0.625 Note.G 4
+            yield! halfNote Note.E 4
+            yield! note 0.625 Note.F 4
+            yield! halfNote Note.Gs 4
+            yield! halfNote Note.G 4
+            yield! note 0.625 Note.Ds 4
+            yield! halfNote Note.C 4
+            yield! quarterNote Note.D 4
+            yield! eightNote Note.D 4
+            yield! eightNote Note.E 4
+            yield! note 0.625 Note.Fs 4
+            yield! halfNote Note.A 4
+            yield! quarterNote Note.G 4
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! eightNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! quarterNote Note.G 3
+            yield! note 0.825 Note.C 4
+        } |> Seq.toList
 
-        MainTheme <- MainTheme @ note fullNote Note.C 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.As 3
-        MainTheme <- MainTheme @ note eightNote Note.Gs 3
-        MainTheme <- MainTheme @ note fullNote125 Note.As 3
-        MainTheme <- MainTheme @ note fullNote Note.C 4
-        MainTheme <- MainTheme @ note quarterNote Note.Gs 3
-        MainTheme <- MainTheme @ note quarterNote Note.Gs 3
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.B 3
-        MainTheme <- MainTheme @ note eightNote Note.A 3
-        MainTheme <- MainTheme @ note fullNote125 Note.B 3
-        MainTheme <- MainTheme @ note eightNote Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 2
-        MainTheme <- MainTheme @ note halfNote Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 2
-        MainTheme <- MainTheme @ note halfNote Note.REST 0
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note fullNote Note.REST 0
-        MainTheme <- MainTheme @ note 0.375 Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note fullNote Note.REST 0
-        MainTheme <- MainTheme @ note 0.375 Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note 0.75 Note.C 5
-        MainTheme <- MainTheme @ note note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ note eightNote Note.C 5
-        MainTheme <- MainTheme @ note eightNote Note.C 5
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note quarterNote Note.As 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ note halfNote Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.F 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note 0.375 Note.F 4
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ note eightNote Note.Ds 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.F 4
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ note quarterNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ note halfNote Note.A 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note 0.375 Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.G 3 
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note note 0.0625 Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note 0.75 Note.C 5
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 5
-        MainTheme <- MainTheme @ note quarterNote Note.D 5
-        MainTheme <- MainTheme @ note quarterNote Note.B 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note quarterNote Note.C 5
-        MainTheme <- MainTheme @ note quarterNote Note.B 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note quarterNote Note.C 5
-        MainTheme <- MainTheme @ note quarterNote Note.B 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.E 4
-        MainTheme <- MainTheme @ note 0.75 Note.F 4
-        MainTheme <- MainTheme @ note halfNote Note.Gs 4
-        MainTheme <- MainTheme @ note halfNote Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Ds 4
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note quarterNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ note halfNote Note.A 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note 0.375 Note.C 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note fullNote Note.REST 0
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note 0.625 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.REST 0
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note fullNote Note.REST 0
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note 0.625 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note 0.75 Note.C 5
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note note 0.1825 Note.As 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note halfNote Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.F 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.F 4
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ note eightNote Note.Ds 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.F 4
-        MainTheme <- MainTheme @ note quarterNote Note.Ds 4
-        MainTheme <- MainTheme @ note quarterNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note 0.75 Note.Fs 4
-        MainTheme <- MainTheme @ note halfNote Note.A 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.C 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note eightNote Note.F 4
-        MainTheme <- MainTheme @ note 0.75 Note.G 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.Gs 4
-        MainTheme <- MainTheme @ note eightNote Note.As 4
-        MainTheme <- MainTheme @ note 0.75 Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.D 4
-        MainTheme <- MainTheme @ note halfNote Note.Ds 4
-        MainTheme <- MainTheme @ note 0.625 Note.B 4
-        MainTheme <- MainTheme @ note 0.375 Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note halfNote Note.C 5
-        MainTheme <- MainTheme @ note halfNote Note.B 4
-        MainTheme <- MainTheme @ note 0.625 Note.G 4
-        MainTheme <- MainTheme @ note halfNote Note.G 4
-        MainTheme <- MainTheme @ note 0.75 Note.Gs 4
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note halfNote Note.B 4
-        MainTheme <- MainTheme @ note 0.625 Note.G 4
-        MainTheme <- MainTheme @ note halfNote Note.E 4
-        MainTheme <- MainTheme @ note 0.625 Note.F 4
-        MainTheme <- MainTheme @ note halfNote Note.Gs 4
-        MainTheme <- MainTheme @ note halfNote Note.G 4
-        MainTheme <- MainTheme @ note 0.625 Note.Ds 4
-        MainTheme <- MainTheme @ note halfNote Note.C 4
-        MainTheme <- MainTheme @ note quarterNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.D 4
-        MainTheme <- MainTheme @ note eightNote Note.E 4
-        MainTheme <- MainTheme @ note 0.625 Note.Fs 4
-        MainTheme <- MainTheme @ note halfNote Note.A 4
-        MainTheme <- MainTheme @ note quarterNote Note.G 4
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note eightNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note quarterNote Note.G 3
-        MainTheme <- MainTheme @ note 0.825 Note.C 4
-
-        MainTheme
-
-        
     let Thunder() : float list =
         seq {
             yield! eightNote Note.Ds 5
@@ -1101,582 +1095,3 @@ module ExampleSongs =
             yield! eightNote Note.B 4
 
         } |> Seq.toList
-
-    *)
-    let Through() : float list = 
-        let mutable ThroughFireAndFlames = note 0.1 Note.REST 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 3
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.15 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.15 Note.C 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.As 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        //
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.3 Note.G 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        //
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        
-        
-        
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.C 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.D 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Ds 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.F 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Gs 4
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 4
-
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.Fs 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.1 Note.G 5
-        ThroughFireAndFlames <- ThroughFireAndFlames @ note 0.3 Note.Fs 5
-
-
-        ThroughFireAndFlames

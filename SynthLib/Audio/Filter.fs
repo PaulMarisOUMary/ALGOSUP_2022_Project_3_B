@@ -11,8 +11,6 @@ module Filter =
         wave |> List.map (fun x -> if x < -abs(amplitude) then -abs(amplitude) else abs(amplitude))
 
     let Echo (duration : float) (wave : List<float>) = // Add echo to the sound
-        //let highestAmplitude = wave |> Seq.max
-
         let distance = 340. * duration // sound speed x duration = distance
         let subAmplitude = distance / 10. // 10m -> 1% | distance / 10m -> s%
 
