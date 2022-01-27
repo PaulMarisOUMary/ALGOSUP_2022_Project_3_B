@@ -58,34 +58,32 @@ module Filter =
     let Reverb = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
         0
 
-    //let LowPass sampleRate cutoffFreq (data:List<float>) =
-    //       let pi = Math.PI
+    let LowPass cutoffFreq (data:List<float>) = 
+        [
+        let pi = Math.PI
 
-    //       let RC = 1. / (2. * pi * cutoffFreq)
-    //       let dt = 1. / sampleRate
-    //       let alpha = dt / (RC + dt)
+        let RC = 1. / (2. * pi * cutoffFreq)
+        let dt = 1. / (float sampleRate)
+        let alpha = RC / (RC + dt)
 
-    //       let mutable y = [alpha * data.[0]]
-    //       let mutable y' = [alpha * data.[0]]
-    //       for x in List.tail data do
-    //           y' <- y' @ [ alpha * x + (1. - alpha) * (List.last y') ]
-    //           if (List.length y') = 10000 then
-    //               y <- y @ y'[1..]
-    //               y' <- [List.last y']
-    //       y @ y'[1..]
+        let mutable last = (alpha*data.[0])
+        
+        for i in 1..(data.Length-1) do
+            yield (alpha * data.[i]) + ((1. - alpha) * last)
+            last <- ((alpha * data.[i]) + ((1. - alpha) * last))
+        ]
 
-    //let HighPass sampleRate cutoffFreq (data:List<float>) =
-    //        let pi = Math.PI
+    let HighPass cutoffFreq (data : List<float>) =
+        [
+        let pi = Math.PI
 
-    //        let RC = 1. / (2. * pi * cutoffFreq)
-    //        let dt = 1. / sampleRate
-    //        let alpha = dt / (RC + dt)
+        let RC = 1. / (2. * pi * cutoffFreq)
+        let dt = 1. / (float sampleRate)
+        let alpha = RC / (RC + dt)
 
-    //        let mutable y = [data.[0]]
-    //        let mutable y' = [data.[0]]
-    //        for i in 1..(List.length data - 1) do
-    //            y' <- y' @ [ alpha * (List.last y' + data.[i] - data.[i-1]) ]
-    //            if (List.length y') = 10000 then
-    //                y <- y @ y'[1..]
-    //                y' <- [List.last y']
-    //        y @ y'[1..]
+        let mutable last = data.[0]
+
+        for i in 1..(data.Length - 1) do
+            yield (alpha * last) + alpha * (data.[i] - data.[i-1])
+            last <- (alpha * last) + alpha * (data.[i] - data.[i-1])
+        ]
