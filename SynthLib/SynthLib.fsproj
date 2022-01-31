@@ -19,6 +19,7 @@
     <Compile Include="Audio\Filter.fs" />
     <Compile Include="Audio\Notes.fs" />
     <Compile Include="Audio\Waves.fs" />
+	  <PackageReference Include="FftSharp" Version="1.1.4" />
     <PackageReference Include="XPlot.Plotly" Version="4.0.6">
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>

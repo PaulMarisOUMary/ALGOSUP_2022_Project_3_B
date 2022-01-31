@@ -25,7 +25,22 @@ module Wave =
                 yield  t / float sampleRate |> generator calculatedFrequency
         ]
 
-    let Combine(([<ParamArray>] args: List<List<float>>)) = 
+    let Combine (args: List<List<float>>) =
+        (*let (sortedargs : List<List<float>>) = args |> List.sortBy(fun x -> x.Length)
+        let maxlen = sortedargs.[((sortedargs |> List.length ) - 2) ] |> List.length
+        let mutable min = 0
+        [
+            for x in 0.. 1.. maxlen - 1 do 
+                if (x >= sortedargs[min].Length ) then min <- min + 1 else
+                yield  
+                    [
+                        for y in min.. 1 .. (sortedargs.Length - 2)  do
+                            yield sortedargs.[y].[x]
+                    ] |> List.sum
+        ]
+        *)
+            
+                
         let maxlength = args |> List.map List.length |> List.max
         let refactorarraywith0 = [
             for x in args do
