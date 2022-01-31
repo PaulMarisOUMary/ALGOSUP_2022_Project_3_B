@@ -313,3 +313,6 @@ $RECYCLE.BIN/
 
 # Project
 *.wav
+
+# Visual Studio Code Files
+.vscode/*
