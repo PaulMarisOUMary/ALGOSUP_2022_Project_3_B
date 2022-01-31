@@ -15,6 +15,7 @@ module Note =
         | Fs
         | G
         | Gs
+        | LFO
         | REST
         | DEBUG
 
@@ -33,6 +34,7 @@ module Note =
             | A -> 440.00 // LA
             | As -> 466.16
             | B -> 493.88 // SI
+            | LFO -> 4.
             | REST -> 0.
             | DEBUG -> 1. in
 

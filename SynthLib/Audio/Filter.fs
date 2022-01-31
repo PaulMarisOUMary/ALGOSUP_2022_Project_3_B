@@ -91,3 +91,21 @@ module Filter =
             yield (alpha * last) + alpha * (data.[i] - data.[i-1])
             last <- (alpha * last) + alpha * (data.[i] - data.[i-1])
         ]
+    type Typewave =
+        | SQUARE
+        | SINE
+        | TRIANGLE
+        | SAWTOOTH
+
+    let Lfo (rate: float)(depth: float)(typewave: Typewave)(wave : List<float>) = // apply LFO to the sound : see https://www.musicgateway.com/blog/how-to/what-is-lfo-low-frequency-oscillation
+        // rate : frequency between 0 to 20 Hz
+        // depth : amplitude of the wave (float -> 0 à 1) call the function amplitude with this
+        let wavetype = 
+            match typewave with
+            | SQUARE -> Wave.Square
+            | SINE -> Wave.Sine
+            | TRIANGLE -> Wave.Triangle
+            | SAWTOOTH -> Wave.Sawtooth
+        let lfowave = Wave.MakeNote wavetype 2. Note.LFO 4 |> Amplitude depth
+        let lfocombine = Wave.Combine([lfowave ; wave])
+        lfocombine
