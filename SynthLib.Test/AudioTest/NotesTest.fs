@@ -1,11 +1,13 @@
 ﻿namespace SynthLib.Test.AudioTest
 
 open System
+open SynthLib.Audio
 open NUnit.Framework
 
 [<TestFixture>]
-type Test() = 
+type NoteTest() =
 
     [<Test>]
-    member x.TestCase() =
-        Assert.IsTrue(true)
+    member x.GetFrequencyTest() =
+        Assert.IsTrue(Note.GetFrequency Note.REST 4 = 0.)
+        Assert.IsTrue(Note.GetFrequency Note.DEBUG 5 = 2.)
