@@ -20,6 +20,7 @@
     <Compile Include="Audio\Waves.fs" />
     <Compile Include="Audio\Filter.fs" />
     <PackageReference Include="XPlot.Plotly" Version="4.0.6">
+    <PackageReference Include="FftSharp" Version="1.1.4" />  
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>
     <PackageReference Include="XPlot.GoogleCharts" Version="3.0.1">

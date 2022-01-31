@@ -1,72 +1,55 @@
-﻿namespace SynthLib.Chart
+﻿namespace SynthLib.Spectroscope
 
-open SynthLib.Chart.Visualization
-open SynthLib.Variables
 open System
+open System.Collections.Generic
 open System.Numerics
+open FSharp.Core
+open FftSharp
+
+// new Complex(input,0.)
 module Spectroscope =
-    let SpecVisu song =
-        let Waves : List<List<float>> = [
-            [for x in song do
-                if x <= 0. then
-                    yield x * -1.
-                else
-                    yield x];
-            [for y in song do
-                if y >= 0. then
-                    yield y * -1.
-                else
-                    yield y]
+    (*let private CreateHanning (len : int) = 
+        [
+            for i in 0 .. 1 .. len-1 do
+                yield (0.5 - ( 0.5 * cos(2. * Math.PI * (float i) / float len)))
         ]
-        SynthLib.Chart.Visualization.ChartBar Waves 1200 500
 
-    // Function that allow to find the average amplitude
-    let AmpSpect (wave: List<float>) =
-        let mutable count = 0.
-        let mutable all = 0.
-        for i in wave do
-            count <- count + 1.
-            all <- all + i
-        let res = all / count
-        res
+    let ApplyHanning wave =
+        wave |> List.length |> CreateHanning |> List.map2(fun w x -> w * x)
+    *)
+    let IsPow2 (x: int) = ((x &&& (x - 1)) = 0) && (x > 0)
 
-    let rec pow2 x n =
-        match x with
-        | _ when n*2 > x -> n
-        | _ -> pow2 x (2*n)
+    let PadToPow2 (input: float[]) =
+        if (IsPow2 input.Length) then input else
+            let mutable target = 1
+            while target < input.Length do
+                target <- target * 2
+            let toadd = target - input.Length
+            let padded = Array.create target 0.
+            Array.Copy(input,0 ,padded, toadd/2, input.Length)
+            padded
+    (*
+    let rec private  lFFT (complexWave : List<Complex>) =
+        let out = new List<Complex>()
+        let halflen = (complexWave.Count) / 2
+        let even = new List<Complex>()
+        let odd = new List<Complex>()
+        for i = 0 to halflen-1 do
+            even.Add complexWave[i*2]
+            odd.Add complexWave[i*2 + 1]
+        let (odds : List<Complex>) =  if halflen > 1 then lFFT odd else odd
+        let (evens : List<Complex>) = if halflen > 1 then lFFT even else even
+        let m = - 2. * (Math.PI / (float complexWave.Count))
 
-    let rec fft = function
-        | []  -> []
-        | [x] -> [x] 
-        | x ->
-          x
-          |> List.mapi (fun i c -> i % 2 = 0, c)
-          |> List.partition fst
-          |> fun (even, odd) -> fft (List.map snd even), fft (List.map snd odd)
-          ||> List.mapi2 (fun i even odd -> 
-              let btf = odd * Complex.FromPolarCoordinates(1., -2. * Math.PI * (float i / float x.Length ))
-              even + btf, even - btf)
-          |> List.unzip
-          ||> List.append
+        for i = 0 to halflen-1 do
+            let rad = m * float i
+            odds.[i] <- odds.[i] * (new Complex(cos(rad),sin(rad)))
 
-    // Function that allow to find the frequency
-    let FreqSpect (wave: List<float>) =
-        let trimmedList = wave |> let len = wave |> List.length in let pow = pow2 len 1 in List.removeManyAt pow (len-pow)
-        let l2 = wave.[0 .. trimmedList.Length]
-        let output = 
-            l2
-            |> List.map (fun r -> Complex(r, 0.)) 
-            |> fft
-            |> List.map (fun c -> c.Real)
-        let mutable res = (output.Length / (wave.Length / 10_000))
-        res
+        for i = 0 to halflen-1 do
+            out.Insert(i , (evens.[i] + odds.[i]))
+            out.Add  (evens.[i] - odds.[i])
+        out
 
-// use
-
-//    let input = [for x in 0. .. 15. -> cos(x)  + cos(4.0 * x)]
-      
-//    let output = 
-//        input
-//        |> List.map (fun r -> Complex(r, 0.)) 
-//        |> fft
-//        |> List.map (fun c -> c.Real)
+    let FFT wave = new List<Complex> (wave |> List.map(fun x -> new Complex(x,0.)))|> PadToPow2 |> lFFT |> Seq.toList
+*)
+    let fft wave = wave |> List.toArray |> PadToPow2 |> FftSharp.Transform.FFTmagnitude
