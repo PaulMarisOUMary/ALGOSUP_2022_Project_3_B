@@ -1,6 +1,6 @@
 # Project 3: Software Architecture Design Choices Group B
 
-Team: Maxime PAGES, Pierre GORIN, Paul MARRIS, Laurent BOUQUIN, Florent HUREAUX, Arthur LEMOINE
+Team: Maxime PAGES, Pierre GORIN, Paul MARIS, Laurent BOUQUIN, Florent HUREAUX, Arthur LEMOINE
 
 ## 1. Software Architecture Diagram
 

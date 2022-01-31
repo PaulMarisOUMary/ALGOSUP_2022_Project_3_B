@@ -10,20 +10,19 @@ module Filter =
     let Overdriven (amplitude : float) (wave : List<float>) =
         wave |> List.map (fun x -> if x < -abs(amplitude) then -abs(amplitude) else abs(amplitude))
 
-    let Echo (distance : float) (wave : List<float>) = // Add echo to the sound
-        let time = (2.0 * distance * 1000.0) / 340.0 // value in ms
-        let indexEchowave = Convert.ToInt32(time * float sampleRate / 1000.0 )// find the first index for the echowave
-        let echowave = // just the echo wave
-            [ for t in 0 .. 1 .. wave.Length - 1 + indexEchowave do
-              if t < indexEchowave then yield 0. else yield wave.[t - indexEchowave]
+    let Echo (duration : float) (wave : List<float>) = // Add echo to the sound
+        let distance = 340. * duration // sound speed x duration = distance
+        let subAmplitude = distance / 10. // 10m -> 1% | distance / 10m -> s%
 
-            ]
-        let echowavesum = // sum of the two waves
-            [ for t in 0 .. 1 .. wave.Length - 1 + indexEchowave do
-                if t < indexEchowave then yield wave.[t] elif t > wave.Length - 1 then yield echowave.[t] else yield echowave.[t] + wave.[t]
+        let weakWave = wave |> Amplitude (subAmplitude/100.) // wave to "merge/paste" next to the original wave
 
-            ]
-        echowavesum
+        let gap = sampleRate * int duration
+        let fPart = wave |> List.splitAt gap |> fst
+        let sPart = wave |> List.splitAt gap |> snd
+
+        let combine = Wave.Combine([sPart; weakWave])
+
+        fPart @ combine
 
     let Flange (wave : List<float>) = // Add flange to the sound 
         [
@@ -56,34 +55,57 @@ module Filter =
                 yield (coefficient * wave.[i]) + (coefficient * wave.[i-currentDelay])
         ]
 
-    let Reverb = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
-        0
+    let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
+        for i in [0 .. times] do
+            if i = 0 then 
+                Echo (firstDuration) (wave)
+            else
+                Echo (firstDuration/float i) (wave)
 
-    //let LowPass sampleRate cutoffFreq (data:List<float>) =
-    //    let RC = 1. / (2. * Math.PI * cutoffFreq)
-    //    let dt = 1. / sampleRate
-    //    let alpha = dt / (RC + dt)
-    //    let alpha2 = 1. - alpha
+    let LowPass cutoffFreq (data:List<float>) = 
+        [
+        let pi = Math.PI
 
-    //    let mutable y = [alpha * data.[0]]
-    //    let mutable y' = [alpha * data.[0]]
-    //    for x in List.tail data do
-    //        y' <- y' @ [ alpha * x + alpha2 * (List.last y') ]
-    //        if (List.length y') = 10000 then
-    //            y <- y @ y'[1..]
-    //            y' <- [List.last y']
-    //    y @ y'[1..]
+        let RC = 1. / (2. * pi * cutoffFreq)
+        let dt = 1. / (float sampleRate)
+        let alpha = RC / (RC + dt)
 
-    //let HighPass sampleRate cutoffFreq (data:List<float>) =
-    //    let RC = 1. / (2. * Math.PI * cutoffFreq)
-    //    let dt = 1. / sampleRate
-    //    let alpha = dt / (RC + dt)
+        let mutable last = (alpha*data.[0])
+        
+        for i in 1..(data.Length-1) do
+            yield (alpha * data.[i]) + ((1. - alpha) * last)
+            last <- ((alpha * data.[i]) + ((1. - alpha) * last))
+        ]
 
-    //    let mutable y = [data.[0]]
-    //    let mutable y' = [data.[0]]
-    //    for i in 1..(List.length data - 1) do
-    //        y' <- y' @ [ alpha * (List.last y' + data.[i] - data.[i-1]) ]
-    //        if (List.length y') = 10000 then
-    //            y <- y @ y'[1..]
-    //            y' <- [List.last y']
-    //    y @ y'[1..]
+    let HighPass cutoffFreq (data : List<float>) =
+        [
+        let pi = Math.PI
+
+        let RC = 1. / (2. * pi * cutoffFreq)
+        let dt = 1. / (float sampleRate)
+        let alpha = RC / (RC + dt)
+
+        let mutable last = data.[0]
+
+        for i in 1..(data.Length - 1) do
+            yield (alpha * last) + alpha * (data.[i] - data.[i-1])
+            last <- (alpha * last) + alpha * (data.[i] - data.[i-1])
+        ]
+    type Typewave =
+        | SQUARE
+        | SINE
+        | TRIANGLE
+        | SAWTOOTH
+
+    let Lfo (rate: float)(depth: float)(typewave: Typewave)(wave : List<float>) = // apply LFO to the sound : see https://www.musicgateway.com/blog/how-to/what-is-lfo-low-frequency-oscillation
+        // rate : frequency between 0 to 20 Hz
+        // depth : amplitude of the wave (float -> 0 à 1) call the function amplitude with this
+        let wavetype = 
+            match typewave with
+            | SQUARE -> Wave.Square
+            | SINE -> Wave.Sine
+            | TRIANGLE -> Wave.Triangle
+            | SAWTOOTH -> Wave.Sawtooth
+        let lfowave = Wave.MakeNote wavetype 2. Note.LFO 4 |> Amplitude depth
+        let lfocombine = Wave.Combine([lfowave ; wave])
+        lfocombine

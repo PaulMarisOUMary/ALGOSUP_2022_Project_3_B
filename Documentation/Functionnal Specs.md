@@ -11,7 +11,7 @@
   - [6. Requirements specs](#6-requirements-specs)
   - [7. Solution overview](#7-solution-overview)
   - [8. System configurations](#8-system-configurations)
-  - [9. Error reporting and exception handling](#10-error-reporting-and-exception-handling)
+  - [9. Error reporting and exception handling](#9-error-reporting-and-exception-handling)
 
 </details>
 
@@ -57,14 +57,16 @@ let player = Player.Play(tune, Repeat = true)
 More details about the project can be found in the [F# Project - Sound Synthesis.pdf](https://github.com/PaulMarisOUMary/ALGOSUP_2022_Project_3_B/blob/main/Documentation/F%23%20Project%20-%20Sound%20Synthesis.pdf) document.
 
 ## 1. Stakeholders
-| Team            | Roles |
-| --------------- | ----- |
-| Paul MARIS      |       |
-| Laurent BOUQUIN |       |
-| Florent HUREAUX |       |
-| Arthur LEMOINE  |       |
-| Maxime PAGES    |       |
-| Pierre GORIN    |       |
+| Team             | Roles              |
+| ---------------- | -------------------|
+| Paul MARIS       | Project manager    |
+| Maxime PAGES     | Tech lead          |
+| Laurent BOUQUIN  | Team member        |
+| Florent HUREAUX  | Team member        |
+| Arthur LEMOINE   | Team member        |
+| Pierre GORIN     | Team member        |
+| Robert PICKERING | Tech consultant    |
+| Algosup          | Customers          |
 
 ## 2. Project target
 Anyone interested in creating sounds in a programmable way or incorporate in a program should be able easily to use this project. 
@@ -129,4 +131,4 @@ Some of the functionnality doesn't work on mac (like playing directly from Visua
 ## 9. Error reporting and exception handling
 
 All the project is run with Unit Test (Nunit) to assure that every function is working properly no matter the change we've done.
-We also using Github action. // give more information
+We also using Github action. <!-- give more information -->

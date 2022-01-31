@@ -8,19 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
-    <PackageReference Include="NUnit" Version="3.13.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
-    <PackageReference Include="coverlet.collector" Version="3.1.0" />
-    <PackageReference Include="FSharp.Core" Version="6.0.1">
-      <GeneratePathProperty></GeneratePathProperty>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SynthLib\SynthLib.fsproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="AudioTest\" />
     <Folder Include="VisualizationTest\" />
     <Folder Include="CompressionTest\" />
@@ -29,7 +16,19 @@
     <Compile Include="AudioTest\FilterTest.fs" />
     <Compile Include="AudioTest\NotesTest.fs" />
     <Compile Include="AudioTest\WavesTest.fs" />
+    <Compile Include="AudioTest\EnvelopeTest.fs" />
     <Compile Include="CompressionTest\WavTest.fs" />
     <Compile Include="VisualizationTest\ChartTest.fs" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="coverlet.collector" Version="3.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FSharp.Core" Version="6.0.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <ProjectReference Include="..\SynthLib\SynthLib.fsproj" />
   </ItemGroup>
 </Project>

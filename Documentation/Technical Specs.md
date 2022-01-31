@@ -5,7 +5,11 @@
 - [Project Scope](#Project-Scope)
 - [High Level Requirements](#High-Level-Requirements)
 - [Deliverable](#Deliverable)
-- [Project Background and Description](#Project-Background-and-Description)
+- [Affected Parties](#Affected-Parties)
+- [Affected Business Processes or Systems](#Affected-Business-Processes-or-Systems)
+- [Specific Exclusions from Scope](#Specific-Exclusions-from-Scope)
+- [High-Level Timeline/Schedule](#High-Level-Timeline/Schedule)
+
 
 </details>
 
@@ -59,21 +63,18 @@ Help people that need a library to make music in F#. It can be include in some o
 
 ## 7.Specific Exclusions from Scope
 
-The project will be released before the 11<sup>th</sup> of February 2022. The date is not fixed, it can be an hour before or a week. It will depends on when we finish it. If the project is released before the 11<sup>th</sup> of February 2022, we will try to add new functionalities.
+This project will not provide any new functionalities, such as an graphical interface or play sound from microphone.
+If the project is released before the 11<sup>th</sup> of February 2022, we will try to add new functionalities.
 
 ## 8.High-Level Timeline/Schedule
 
 **Schedule :**
 - <ins>For the 21</ins><sup>th</sup><ins> of January :
-    - Envlopes
+    - Envelopes
     - Chords
 - <ins>For the 28</ins><sup>th</sup><ins> of January :
     - Frequency analysis 
-    - Advanced filters (spectroscope, Low Frequncy Oscillator)
+    - Advanced filters (spectroscope, Low Frequency Oscillator)
 - <ins>For the 11</ins><sup>th</sup><ins> of February :
     - MP3 compression
     - MP3 decompression
-
-# Approval and Authority to Proceed
-
-We approve the project as described above, and authorize the team to proceed.
