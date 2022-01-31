@@ -24,11 +24,12 @@ module Filter =
 
         fPart @ combine
 
-    let Flange (wave : List<float>) = // Add flange to the sound 
+    let Flange (maxTimeDelay : float) (speed : float) (wave : List<float>) = // Add flange to the sound 
         [
         //setting the parameters of the effect
-        let maxTimeDelay = 0.003
-        let speed = 1.
+        //maxTimeDalay in between 0.003 and 0.015 seconds
+        //speed in between 1 and 15 Hz
+
 
         //setting the maximum delay depending on samplerate
         let maxSampleDelay = int (maxTimeDelay * float sampleRate)
@@ -55,12 +56,12 @@ module Filter =
                 yield (coefficient * wave.[i]) + (coefficient * wave.[i-currentDelay])
         ]
 
-    let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
-        for i in [0 .. times] do
-            if i = 0 then 
-                Echo (firstDuration) (wave)
-            else
-                Echo (firstDuration/float i) (wave)
+    // let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
+    //     for i in [0 .. times] do
+    //         if i = 0 then 
+    //             Echo (firstDuration) (wave)
+    //         else
+    //             Echo (firstDuration/float i) (wave)
 
     let LowPass cutoffFreq (data:List<float>) = 
         [
@@ -91,21 +92,34 @@ module Filter =
             yield (alpha * last) + alpha * (data.[i] - data.[i-1])
             last <- (alpha * last) + alpha * (data.[i] - data.[i-1])
         ]
-    type Typewave =
-        | SQUARE
-        | SINE
-        | TRIANGLE
-        | SAWTOOTH
 
-    let Lfo (rate: float)(depth: float)(typewave: Typewave)(wave : List<float>) = // apply LFO to the sound : see https://www.musicgateway.com/blog/how-to/what-is-lfo-low-frequency-oscillation
+
+    let LfoAmp (rate : float)(depth : float)(typewave)(wave : List<float>)= //apply a LFO to the amplitude of sound
+        [
+            let mutable currentlfo = 0.
+            for i in 0..(wave.Length-1) do
+                currentlfo <- (typewave (rate/(float sampleRate)) (float i))/2. + 0.75
+                yield wave.[i] * (1.-(currentlfo*depth))
+        ]
+
+    let LfoFreq (rate: float)(depth: float)(typewave)(wave : List<float>) = // apply LFO to an low pass filter in order to variate the frequencie
         // rate : frequency between 0 to 20 Hz
         // depth : amplitude of the wave (float -> 0 à 1) call the function amplitude with this
-        let wavetype = 
-            match typewave with
-            | SQUARE -> Wave.Square
-            | SINE -> Wave.Sine
-            | TRIANGLE -> Wave.Triangle
-            | SAWTOOTH -> Wave.Sawtooth
-        let lfowave = Wave.MakeNote wavetype 2. Note.LFO 4 |> Amplitude depth
-        let lfocombine = Wave.Combine([lfowave ; wave])
-        lfocombine
+
+        [
+            let pi = Math.PI
+
+            let mutable currentlfo = 9000.
+            let mutable RC = 1. / (2. * pi * currentlfo)
+            let dt = 1. / (float sampleRate)
+            let mutable alpha = RC / (RC + dt)
+
+            let mutable last = (alpha*wave.[0])
+            
+            for i in 1..(wave.Length-1) do
+                currentlfo <- ((typewave (rate/(float sampleRate)) (float i))*6000.)+7500.
+                RC <- 1. / (2. * pi * currentlfo)
+                alpha <- RC / (RC + dt)
+                yield (alpha * wave.[i]) + ((1. - alpha) * last)
+                last <- ((alpha * wave.[i]) + ((1. - alpha) * last))
+        ]
