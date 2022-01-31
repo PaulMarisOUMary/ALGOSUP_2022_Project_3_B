@@ -55,8 +55,12 @@ module Filter =
                 yield (coefficient * wave.[i]) + (coefficient * wave.[i-currentDelay])
         ]
 
-    let Reverb = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
-        0
+    let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
+        for i in [0 .. times] do
+            if i = 0 then 
+                Echo (firstDuration) (wave)
+            else
+                Echo (firstDuration/float i) (wave)
 
     let LowPass cutoffFreq (data:List<float>) = 
         [
