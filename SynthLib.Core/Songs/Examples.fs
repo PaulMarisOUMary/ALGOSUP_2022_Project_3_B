@@ -6,7 +6,7 @@ open SynthLib.Audio
 module ExampleSongs =
 
     let note lenght note octave =
-        Wave.MakeNote Wave.Triangle lenght note octave
+        Wave.MakeNote Wave.Sine lenght note octave
         |> Envelope.apply 0.1 0.06 0.1 0.8
         //|> Filter.HighPass 10000.
         //|> Filter.Flange
@@ -36,9 +36,12 @@ module ExampleSongs =
     //     } |> Seq.toList
 
 
+    let test (): float list =
+        seq {
+            yield! note 0.5 Note.A 4
+        }|> Seq.toList |> Filter.Reverb 10 3.
 
 
-(*
     let MoonSong () : float list =
         seq {
             yield! halfNote Note.C 4
@@ -53,7 +56,7 @@ module ExampleSongs =
             yield! halfNote Note.D 4
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
-        } |> Seq.toList
+        } |> Seq.toList |> Filter.Echo 1.
 
     let MarioTheme () : float list = 
         seq {
@@ -1118,7 +1121,7 @@ module ExampleSongs =
             yield! eightNote Note.B 4
 
         } |> Seq.toList
-*)
+
     let RunningInThe90 () : float list =
         seq {
             

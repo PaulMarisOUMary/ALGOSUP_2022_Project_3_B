@@ -1,9 +1,11 @@
 ﻿namespace SynthLib.Audio
 
-open System
-open SynthLib.Variables
 
 module Filter =
+
+    open System
+    open SynthLib.Variables
+    
     let Amplitude (amplitudeChange : float) (wave : List<float>) =
         wave |> List.map (fun x -> x * amplitudeChange)
 
@@ -14,14 +16,10 @@ module Filter =
     let Echo (duration : float) (wave : List<float>) = // Add echo to the sound
         let distance = 340. * duration // sound speed x duration = distance
         let subAmplitude = distance / 10. // 10m -> 1% | distance / 10m -> s%
-
         let weakWave = wave |> Amplitude (subAmplitude/100.) // wave to "merge/paste" next to the original wave
-
-        let echo = (Wave.MakeNote (Wave.Sine) duration Note.REST 4) @ weakWave
-
+        let echo = (Wave.MakeNote (Wave.Identity) duration Note.REST 4) @ weakWave
         Wave.Combine([wave; echo])
-
-
+        
     let Flange (maxTimeDelay : float) (speed : float) (wave : List<float>) = // Add flange to the sound 
         [
         //setting the parameters of the effect
@@ -56,12 +54,9 @@ module Filter =
 
     let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
         let mutable final = wave
-        for i in [0 .. times] do
-            if i = 0 then 
-                final <- Wave.Combine [Echo (firstDuration) (wave) ; final]
-            else
-                final <- Wave.Combine [Echo (firstDuration * float i) (wave); final]
-
+        for i in [1 .. times + 1] do
+            final <- Wave.Combine [Echo (firstDuration * float i) (wave); final]
+        final
 
     let LowPass cutoffFreq (data:List<float>) =
         [
@@ -70,11 +65,13 @@ module Filter =
         let RC = 1. / (2. * pi * cutoffFreq)
         let dt = 1. / (float sampleRate)
         let alpha = RC / (RC + dt)
+        let mutable temp = 0.
 
         let mutable last = (alpha*data.[0])
         for i in 1..(data.Length-1) do
-            yield (alpha * data.[i]) + ((1. - alpha) * last)
-            last <- ((alpha * data.[i]) + ((1. - alpha) * last))
+            temp <- ((alpha * data.[i]) + ((1. - alpha) * last))
+            yield temp
+            last <- temp 
         ]
 
     let HighPass cutoffFreq (data : List<float>) =
@@ -84,12 +81,14 @@ module Filter =
         let RC = 1. / (2. * pi * cutoffFreq)
         let dt = 1. / (float sampleRate)
         let alpha = RC / (RC + dt)
+        let mutable temp = 0.
 
         let mutable last = data.[0]
 
         for i in 1..(data.Length - 1) do
-            yield (alpha * last) + alpha * (data.[i] - data.[i-1])
-            last <- (alpha * last) + alpha * (data.[i] - data.[i-1])
+            temp <- (alpha * last) + alpha * (data.[i] - data.[i-1])
+            yield temp
+            last <- temp
         ]
 
 
@@ -112,6 +111,7 @@ module Filter =
             let mutable RC = 1. / (2. * pi * currentlfo)
             let dt = 1. / (float sampleRate)
             let mutable alpha = RC / (RC + dt)
+            let mutable temp = 0.
 
             let mutable last = (alpha*wave.[0])
             
@@ -119,6 +119,7 @@ module Filter =
                 currentlfo <- ((typewave (rate/(float sampleRate)) (float i))*6000.)+7500.
                 RC <- 1. / (2. * pi * currentlfo)
                 alpha <- RC / (RC + dt)
-                yield (alpha * wave.[i]) + ((1. - alpha) * last)
-                last <- ((alpha * wave.[i]) + ((1. - alpha) * last))
+                temp <- (alpha * wave.[i]) + ((1. - alpha) * last)
+                yield temp 
+                last <- temp
         ]

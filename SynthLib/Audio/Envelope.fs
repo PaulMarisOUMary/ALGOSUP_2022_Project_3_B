@@ -1,9 +1,11 @@
 ﻿namespace SynthLib.Audio
 
-open System
-open SynthLib.Variables
 
 module Envelope =
+
+    open System
+    open SynthLib.Variables
+
     let apply (attackTime : float) (decayTime : float) (releaseTime : float) (sustainAmplitude : float) (wave : list<float>) =  //ADSR for Attack Decay Sustain and Release
         [
 

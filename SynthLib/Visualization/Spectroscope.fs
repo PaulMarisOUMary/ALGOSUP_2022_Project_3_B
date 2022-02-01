@@ -1,14 +1,16 @@
-﻿namespace SynthLib.Spectroscope
+﻿namespace SynthLib.Visualization
 
-open System
-open System.Collections.Generic
-open System.Numerics
-open FSharp.Core
-open FftSharp
+
 
 // new Complex(input,0.)
 module Spectroscope =
-    (*let private CreateHanning (len : int) = 
+
+    open System
+    open System.Collections.Generic
+    open System.Numerics
+    open FSharp.Core
+    open FftSharp
+    (*let private CreateHanning (len : int) =
         [
             for i in 0 .. 1 .. len-1 do
                 yield (0.5 - ( 0.5 * cos(2. * Math.PI * (float i) / float len)))
@@ -52,4 +54,4 @@ module Spectroscope =
 
     let FFT wave = new List<Complex> (wave |> List.map(fun x -> new Complex(x,0.)))|> PadToPow2 |> lFFT |> Seq.toList
 *)
-    let fft wave = wave |> List.toArray |> PadToPow2 |> FftSharp.Transform.FFTmagnitude
+    let fft wave = wave |> List.toArray |> PadToPow2 |> FftSharp.Transform.FFTpower

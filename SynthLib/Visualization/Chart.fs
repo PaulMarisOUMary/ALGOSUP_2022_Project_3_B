@@ -1,17 +1,19 @@
-﻿namespace SynthLib.Chart
+﻿namespace SynthLib.Visualization
 
-open SynthLib.Variables
-open XPlot.Plotly
-open XPlot.GoogleCharts
-open System
+
 
 module Visualization =
+
+    open SynthLib.Variables
+    open XPlot.Plotly
+    open XPlot.GoogleCharts
+    open System
 
     let Chart datas xSize ySize =
      
         let Graph =
             datas
-            |> List.map ( fun l -> List.mapi (fun i x -> (float i / float sampleRate, x)) l)
+            |> List.map ( fun l -> List.mapi (fun i x -> (float i, x)) l)
             |> Chart.Combo
             |> Chart.WithSize (xSize, ySize)
         Chart.Show Graph
