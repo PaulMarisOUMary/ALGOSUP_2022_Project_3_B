@@ -15,7 +15,7 @@ module Filter =
         let distance = 340. * duration // sound speed x duration = distance
         let subAmplitude = distance / 10. // 10m -> 1% | distance / 10m -> s%
         let weakWave = wave |> Amplitude (subAmplitude/100.) // wave to "merge/paste" next to the original wave
-        let echo = (Wave.MakeNote (Wave.Sine) duration Note.REST 4) @ weakWave
+        let echo = (Wave.MakeNote (Wave.Identity) duration Note.REST 4) @ weakWave
         Wave.Combine([wave; echo])
         
     let Flange (maxTimeDelay : float) (speed : float) (wave : List<float>) = // Add flange to the sound 
