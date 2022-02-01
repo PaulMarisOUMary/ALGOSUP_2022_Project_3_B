@@ -16,16 +16,16 @@ module Envelope =
 
         for index in 0..wave.Length-1 do
             //Attack time
-            if index < attackTimeSample then 
+            if index <= attackTimeSample then 
                 yield ((float index)/(float attackTimeSample)) * wave.[index]
             //Decay time
-            elif index > attackTimeSample && index < ( attackTimeSample + decayTimeSample ) then
+            elif index > attackTimeSample && index <= ( attackTimeSample + decayTimeSample ) then
                 yield ((float ((float index - float attackTimeSample)/float decayTimeSample)) * (sustainAmplitude-attackAmplitude) + attackAmplitude) * wave.[index]
             //Sustain time
             elif index > (attackTimeSample + decayTimeSample) && index < (wave.Length - releaseTimeSample) then
                 yield sustainAmplitude * wave.[index]
             //release time
-            elif index > (wave.Length - releaseTimeSample) then
+            elif index >= (wave.Length - releaseTimeSample) then
                 yield (((float wave.Length-1.)-(float index))/(float releaseTimeSample)) * (float wave.[index]*sustainAmplitude)
         
         ]
