@@ -1,11 +1,11 @@
 ﻿namespace SynthLib.Audio
 
-open System
-open SynthLib.Variables
-open System.Collections.Generic
-
 module Wave =
 
+    open System
+    open SynthLib.Variables
+    open System.Collections.Generic
+    
     let PI = Math.PI
 
     let (mod) x y=

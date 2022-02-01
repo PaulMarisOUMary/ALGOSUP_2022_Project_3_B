@@ -1,9 +1,11 @@
 ﻿namespace SynthLib.Audio
 
-open System
-open SynthLib.Variables
 
 module Filter =
+
+    open System
+    open SynthLib.Variables
+    
     let Amplitude (amplitudeChange : float) (wave : List<float>) =
         wave |> List.map (fun x -> x * amplitudeChange)
 
