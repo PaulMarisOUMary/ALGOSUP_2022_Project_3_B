@@ -20,3 +20,4 @@ Modules:
 - [Visualization](/ALGOSUP_2022_Project_3_B/visualization/visualization)
     - [Visualization.Chart](/ALGOSUP_2022_Project_3_B/visualization/chart)
     - [Visualization.Spectroscope](/ALGOSUP_2022_Project_3_B/visualization/spectroscope)
+- [Variables](/ALGOSUP_2022_Project_3_B/variables)
