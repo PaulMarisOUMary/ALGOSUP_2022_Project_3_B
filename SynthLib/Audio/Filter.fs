@@ -8,7 +8,8 @@ module Filter =
         wave |> List.map (fun x -> x * amplitudeChange)
 
     let Overdriven (amplitude : float) (wave : List<float>) =
-        wave |> List.map (fun x -> if x < -abs(amplitude) then -abs(amplitude) else abs(amplitude))
+        let absamp = abs(amplitude)
+        wave |> List.map (fun x -> if abs(x) < absamp then x else ( float (sign(x)) * absamp))
 
     let Echo (duration : float) (wave : List<float>) = // Add echo to the sound
         let distance = 340. * duration // sound speed x duration = distance
@@ -16,15 +17,12 @@ module Filter =
 
         let weakWave = wave |> Amplitude (subAmplitude/100.) // wave to "merge/paste" next to the original wave
 
-        let gap = sampleRate * int duration
-        let fPart = wave |> List.splitAt gap |> fst
-        let sPart = wave |> List.splitAt gap |> snd
+        let echo = (Wave.MakeNote (Wave.Sine) duration Note.REST 4) @ weakWave
 
-        let combine = Wave.Combine([sPart; weakWave])
+        Wave.Combine([wave; echo])
 
-        fPart @ combine
 
-    let Flange (wave : List<float>) = // Add flange to the sound 
+    let Flange (wave : List<float>) = // Add flange to the sound
         [
         //setting the parameters of the effect
         let maxTimeDelay = 0.003
@@ -56,13 +54,15 @@ module Filter =
         ]
 
     let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
+        let mutable final = wave
         for i in [0 .. times] do
             if i = 0 then 
-                Echo (firstDuration) (wave)
+                final <- Wave.Combine [Echo (firstDuration) (wave) ; final]
             else
-                Echo (firstDuration/float i) (wave)
+                final <- Wave.Combine [Echo (firstDuration * float i) (wave); final]
 
-    let LowPass cutoffFreq (data:List<float>) = 
+
+    let LowPass cutoffFreq (data:List<float>) =
         [
         let pi = Math.PI
 
@@ -71,7 +71,6 @@ module Filter =
         let alpha = RC / (RC + dt)
 
         let mutable last = (alpha*data.[0])
-        
         for i in 1..(data.Length-1) do
             yield (alpha * data.[i]) + ((1. - alpha) * last)
             last <- ((alpha * data.[i]) + ((1. - alpha) * last))
