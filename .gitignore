@@ -1,0 +1,17 @@
+# Ignore everything
+*
+/*
+
+# Except for the following
+!_config.yml
+!.gitignore
+
+# Except images
+!*.md
+!img/
+!img/*.png
+!img/*.jpg
+!img/*.jpeg
+!img/*.gif
+!img/*.svg
+!img/*.ico
