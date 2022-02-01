@@ -19,7 +19,7 @@ module Wave =
 
     let Sawtooth frequency t = ((2. * t * frequency) mod 2.) - 1.
 
-    let Identity frequency t = 0.
+    let Identity _ _ = 0.
 
    // let Triangle frequency t = (8./(PI*PI))*(cos(2.0*PI*t*frequency)+ (1./9.)* cos(2.0*PI*t*frequency*3.)+ (1./25.)* cos(2.0*PI*t*frequency*5.))
 
