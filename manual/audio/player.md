@@ -1,8 +1,8 @@
 # Module Player
 
-## Filter
+## Player
 ```fsharp
-module Filter
+module Player
 ```
 Attributes:
 `none`
