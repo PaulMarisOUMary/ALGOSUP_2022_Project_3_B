@@ -3,6 +3,7 @@
 An audio library for F#.
 
 ## Getting started :
-- First steps: [Introduction](/introduction)
+- [Introduction](/introduction)
+- [Quickstart](/quickstart)
 
 ## Manuals :
