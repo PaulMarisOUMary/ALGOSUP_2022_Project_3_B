@@ -46,7 +46,8 @@ The duration of the wave in seconds.
 ```fsharp
 method Square (frequency:float) (duration:float)
 ```
-Return a point-sampled square wave.
+```
+Return the value of a square wave at a time t.
 
 #### Example Usage:
 ```fsharp
@@ -70,7 +71,8 @@ The duration of the wave in seconds.
 ```fsharp
 method Triangle (frequency:float) (duration:float)
 ```
-Return a point-sampled triangle wave.
+```
+Return the value of a triangle wave at a time t.
 
 #### Example Usage:
 ```fsharp
@@ -94,7 +96,8 @@ The duration of the wave in seconds.
 ```fsharp
 method Sawtooth (frequency:float) (duration:float)
 ```
-Return a point-sampled sawtooth wave.
+```
+Return the value of a sawtooth wave at a time t.
 
 #### Example Usage:
 ```fsharp
@@ -122,7 +125,7 @@ Return a empty wave.
 
 #### Example Usage:
 ```fsharp
-let wave = Wave.Identity 440. 1.
+let wave = Wave.Identity 0. 1.
 ```
 
 #### Parameters:
@@ -154,7 +157,7 @@ let wave = Wave.MakeNote (Wave.Square) 1. Note.A 4
 `generator` : mandatory
 The type of the wave.
 
-<ins>Type</ins> : [???](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+<ins>Type</ins> : func([float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)*[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)->[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0))
 
 `duration` : mandatory
 The duration of the wave in seconds.
