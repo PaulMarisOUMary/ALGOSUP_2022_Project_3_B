@@ -22,7 +22,7 @@ Methods:
 ```fsharp
 method Sine (frequency:float) (duration:float)
 ```
-Return a point-sampled sine wave.
+Return the value of a sine wave at a time t.
 
 #### Example Usage:
 ```fsharp
