@@ -23,7 +23,7 @@ let ourWave =
         4           // Octave
 ```
 
-More details on Manual : module [Wave](/ALGOSUP_2022_Project_3_B/audio/wave).
+More details on Manual : module [Wave](/ALGOSUP_2022_Project_3_B/_posts/audio/wave).
 
 ### Save sound to disk
 
@@ -45,7 +45,7 @@ Wav.EncodeWav
 
 Then you can play the sound localy with you favourite software.
 
-More details on Manual : module [Wav](/ALGOSUP_2022_Project_3_B/compression/wav).
+More details on Manual : module [Wav](/ALGOSUP_2022_Project_3_B/_posts/compression/wav).
 
 ### Play sound live
 
@@ -57,4 +57,4 @@ If you want to play the sound live, you can use the `Player.Play` method.
 ourWave |> Player.Play true
 ```
 
-More details on Manual : module [Player](/ALGOSUP_2022_Project_3_B/audio/player).
+More details on Manual : module [Player](/ALGOSUP_2022_Project_3_B/_posts/audio/player).
