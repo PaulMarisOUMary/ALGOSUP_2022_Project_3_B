@@ -36,12 +36,6 @@ module ExampleSongs =
     //     } |> Seq.toList
 
 
-    let test (): float list =
-        seq {
-            yield! note 0.5 Note.A 4
-        }|> Seq.toList |> Filter.Reverb 10 3.
-
-
     let MoonSong () : float list =
         seq {
             yield! halfNote Note.C 4
@@ -56,7 +50,7 @@ module ExampleSongs =
             yield! halfNote Note.D 4
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
-        } |> Seq.toList |> Filter.Echo 1.
+        } |> Seq.toList |> Filter.Reverb 5 0.25
 
     let MarioTheme () : float list = 
         seq {

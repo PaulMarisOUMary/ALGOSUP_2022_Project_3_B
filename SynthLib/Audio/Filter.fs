@@ -6,6 +6,7 @@ module Filter =
     open System
     open SynthLib.Variables
     
+    
     let Amplitude (amplitudeChange : float) (wave : List<float>) =
         wave |> List.map (fun x -> x * amplitudeChange)
 
@@ -14,9 +15,8 @@ module Filter =
         wave |> List.map (fun x -> if abs(x) < absamp then x else ( float (sign(x)) * absamp))
 
     let Echo (duration : float) (wave : List<float>) = // Add echo to the sound
-        let distance = 340. * duration // sound speed x duration = distance
-        let subAmplitude = distance / 10. // 10m -> 1% | distance / 10m -> s%
-        let weakWave = wave |> Amplitude (subAmplitude/100.) // wave to "merge/paste" next to the original wave
+        let subAmplitude = 1. / ( duration + 1.)// 10m -> 1% | distance / 10m -> s%
+        let weakWave = wave |> Amplitude (subAmplitude) // wave to "merge/paste" next to the original wave
         let echo = (Wave.MakeNote (Wave.Identity) duration Note.REST 4) @ weakWave
         Wave.Combine([wave; echo])
         
@@ -54,7 +54,7 @@ module Filter =
 
     let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
         let mutable final = wave
-        for i in [1 .. times + 1] do
+        for i in [1 .. times] do
             final <- Wave.Combine [Echo (firstDuration * float i) (wave); final]
         final
 
@@ -153,3 +153,37 @@ module Filter =
                 yield temp 
                 last <- temp
         ]
+        
+    open SynthLib.Audio.Note
+
+    let note lenght note octave =
+        Wave.MakeNote Wave.Sine lenght note octave
+        
+    let fullNote = note 1.
+    let halfNote = note 0.5
+    let quarterNote = note 0.25
+    let eightNote = note 0.125
+    
+    
+    let MoonSong =
+        seq {
+            yield! halfNote Note.C 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.D 4
+            yield! fullNote Note.E 4
+            yield! fullNote Note.D 4
+            yield! halfNote Note.C 4
+            yield! halfNote Note.E 4
+            yield! halfNote Note.D 4
+            yield! halfNote Note.D 4
+            yield! fullNote Note.C 4
+            yield! fullNote Note.REST 4
+         } |> Seq.toList
+    
+    let song = MoonSong |> SynthLib.Audio.Player.Play true 
+    
+         
+    
+            
+           
