@@ -54,7 +54,7 @@ module Filter =
 
     let Reverb (times: int) (firstDuration : float) (wave : List<float>) = // A reverb effect filter, wikipedia has a description of reverberation: https://en.wikipedia.org/wiki/Reverberation
         let mutable final = wave
-        for i in [1 .. times + 1] do
+        for i in [1 .. times] do
             final <- Wave.Combine [Echo (firstDuration * float i) (wave); final]
         final
 
