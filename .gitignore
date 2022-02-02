@@ -15,3 +15,8 @@
 !img/*.gif
 !img/*.svg
 !img/*.ico
+
+!manual/
+!manual/audio/
+!manual/compression/
+!manual/visualization/

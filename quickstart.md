@@ -1,6 +1,6 @@
 # Quickstart
 
-This page gives a brief introduction to the library. It assumes that the library is installed, if not, please refer to the [installation](/installation) section.
+This page gives a brief introduction to the library. It assumes that the library is installed, if not, please refer to the [installation](/ALGOSUP_2022_Project_3_B/installation) section.
 
 ---
 
@@ -23,7 +23,7 @@ let ourWave =
         4           // Octave
 ```
 
-More details on Manual : module Wave. <REPLACEME/>
+More details on Manual : module [Wave](/ALGOSUP_2022_Project_3_B/audio/wave).
 
 ### Save sound to disk
 
@@ -36,6 +36,8 @@ let byteArray = ourWave |> Wav.ToByteArray
 Once we have the byte array, we can save it to disk with the `Wav.Encode` method.
 
 ```fsharp
+// using ourWave, see the "Create our first sound" section
+
 Wav.EncodeWav
     @"../../../../output.wav"   // Path
     byteArray                   // ByteArray
@@ -43,10 +45,16 @@ Wav.EncodeWav
 
 Then you can play the sound localy with you favourite software.
 
-More details on Manual : module Wav. <REPLACEME/>
+More details on Manual : module [Wav](/ALGOSUP_2022_Project_3_B/compression/wav).
 
 ### Play sound live
 
-If you want to play the sound live, you can use the `NOT_IMPLEMENTED` method.
+If you want to play the sound live, you can use the `Player.Play` method.
 
-More details on Manual : module NOT_IMPLEMENTED. <REPLACEME/>
+```fsharp
+// using ourWave, see the "Create our first sound" section
+
+ourWave |> Player.Play true
+```
+
+More details on Manual : module [Player](/ALGOSUP_2022_Project_3_B/audio/player).
