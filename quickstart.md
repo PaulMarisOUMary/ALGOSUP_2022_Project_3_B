@@ -36,6 +36,8 @@ let byteArray = ourWave |> Wav.ToByteArray
 Once we have the byte array, we can save it to disk with the `Wav.Encode` method.
 
 ```fsharp
+// using ourWave, see the "Create our first sound" section
+
 Wav.EncodeWav
     @"../../../../output.wav"   // Path
     byteArray                   // ByteArray
@@ -47,6 +49,12 @@ More details on Manual : module Wav. <REPLACEME/>
 
 ### Play sound live
 
-If you want to play the sound live, you can use the `NOT_IMPLEMENTED` method.
+If you want to play the sound live, you can use the `Player.Play` method.
 
-More details on Manual : module NOT_IMPLEMENTED. <REPLACEME/>
+```fsharp
+// using ourWave, see the "Create our first sound" section
+
+ourWave |> Player.Play true
+```
+
+More details on Manual : module Player. <REPLACEME/>

@@ -41,12 +41,16 @@ The duration of the wave in seconds.
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
 
+#### Returns:
+Return the value of a sine wave at a time t.
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
 ## Square
 ---
 ```fsharp
 method Square (frequency:float) (duration:float)
 ```
-```
+
 Return the value of a square wave at a time t.
 
 #### Example Usage:
@@ -66,12 +70,16 @@ The duration of the wave in seconds.
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
 
+#### Returns:
+Return the value of a square wave at a time t.
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
 ## Triangle
 ---
 ```fsharp
 method Triangle (frequency:float) (duration:float)
 ```
-```
+
 Return the value of a triangle wave at a time t.
 
 #### Example Usage:
@@ -91,12 +99,16 @@ The duration of the wave in seconds.
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
 
+#### Returns:
+Return the value of a triangle wave at a time t.
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
 ## Sawtooth
 ---
 ```fsharp
 method Sawtooth (frequency:float) (duration:float)
 ```
-```
+
 Return the value of a sawtooth wave at a time t.
 
 #### Example Usage:
@@ -116,12 +128,16 @@ The duration of the wave in seconds.
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
 
+#### Returns:
+Return the value of a sawtooth wave at a time t.
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
 ## Identity
 ---
 ```fsharp
 method Identity (frequency:float) (duration:float)
 ```
-Return a empty wave.
+Return the value of a identity wave at a time t, in this case it's always `0.`. Combined with a [MakeNote](#makenote) it should represent silence/ an empty wave.
 
 #### Example Usage:
 ```fsharp
@@ -131,7 +147,7 @@ let wave = Wave.Identity 0. 1.
 #### Parameters:
 
 `frequency` : mandatory
-The frequency of the Identity wave.
+The frequency of the Identity wave. Whatever value it has, this parameter is ignored. It has been created to make the function callable combined with a [MakeNote](#makenote).
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
 
@@ -139,6 +155,11 @@ The frequency of the Identity wave.
 The duration of the wave in seconds.
 
 <ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+#### Returns:
+Return the value of a identity wave at a time t, in this case it's always `0.`.
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0) (always `0.`)
+
 
 ## MakeNote
 ---
@@ -174,6 +195,10 @@ The octave of the note you want to play (0 to 8).
 
 <ins>Type</ins> : [int](https://docs.microsoft.com/en-us/dotnet/api/system.int16?view=net-6.0)
 
+#### Returns:
+Return a wave.
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | (wave)
+
 ## Combine
 ---
 ```fsharp
@@ -192,3 +217,7 @@ let wave = Wave.Combine([Wave.MakeNote Wave.Square 2. Note.E 4; Wave.MakeNote Wa
 A list of all the different waves you want to combine.
 
 <ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)>
+
+#### Returns:
+Return a wave.
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | (wave)
