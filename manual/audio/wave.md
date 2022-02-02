@@ -188,4 +188,4 @@ let wave = Wave.Combine([Wave.MakeNote Wave.Square 2. Note.E 4; Wave.MakeNote Wa
 `args` : mandatory
 A list of all the different waves you want to combine.
 
-<ins>Type</ins> : [list<list<float>>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)>
