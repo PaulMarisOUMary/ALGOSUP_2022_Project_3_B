@@ -1,6 +1,6 @@
 # Quickstart
 
-This page gives a brief introduction to the library. It assumes that the library is installed, if not, please refer to the [installation](/ALGOSUP_2022_Project_3_B/installation) section.
+This page gives a brief introduction to the library. It assumes that the library is installed, if not, please refer to the [introduction](/ALGOSUP_2022_Project_3_B/introduction) section.
 
 ---
 

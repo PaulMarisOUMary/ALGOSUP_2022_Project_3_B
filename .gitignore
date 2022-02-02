@@ -16,7 +16,7 @@
 !img/*.svg
 !img/*.ico
 
-!manual/
-!manual/audio/
-!manual/compression/
-!manual/visualization/
+!_posts/
+!_posts/audio/
+!_posts/compression/
+!_posts/visualization/
