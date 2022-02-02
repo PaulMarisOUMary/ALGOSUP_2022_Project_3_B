@@ -197,3 +197,115 @@ The wave you want to modify.
 #### Returns:
 Return a modified wave with a LowPass effect applied to it.
 <ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | ([wave](/ALGOSUP_2022_Project_3_B/audio/wave))
+
+
+## High Pass
+---
+```fsharp
+method HighPass cutoffFreq (data : List<float>)
+```
+
+#### Example Usage:
+```fsharp
+let wave = Wave.MakeNote (Wave.Square) 1. Note.A 4 
+            |> HighPass 500.
+```
+
+#### Parameters:
+
+`cutoffFreq` : mandatory
+The cutoff frequency you want to apply to the wave.
+
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+
+`data` : mandatory
+The wave you want to modify.
+
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)>
+
+#### Returns:
+Return a modified wave with a HighPass effect applied to it.
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | ([wave](/ALGOSUP_2022_Project_3_B/audio/wave))
+
+
+## LfoAmp
+---
+```fsharp
+method LfoAmp (rate : float)(depth : float)(typewave)(wave : List<float>)
+```
+
+#### Example Usage:
+```fsharp
+let wave = Wave.MakeNote (Wave.Square) 1. Note.A 4 
+            |> LfoAmp 0.4 0.7 Wave.Sinus
+```
+
+#### Parameters:
+
+`rate` : mandatory
+The low frequency of the LFO (0 to 20 Hz).
+
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+`depth` : mandatory
+The Amplitude of the LFO wave.
+
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+`typewave` : mandatory
+The type of the wave using by the LFO.
+
+<ins>Type</ins> : func([float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)*[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)->[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0))
+
+
+`wave` : mandatory
+The wave you want to modify.
+
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)>
+
+#### Returns:
+Return a modified wave with a LFO applied to it.
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | ([wave](/ALGOSUP_2022_Project_3_B/audio/wave))
+
+## LfoFreq
+---
+```fsharp
+method LfoFreq (rate: float)(depth: float)(typewave)(wave : List<float>)
+```
+
+#### Example Usage:
+```fsharp
+let wave = Wave.MakeNote (Wave.Square) 1. Note.A 4 
+            |> LfoFreq 0.4 0.7 Wave.Sinus
+```
+
+#### Parameters:
+
+`rate` : mandatory
+The low frequency of the LFO (0 to 20 Hz).
+
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+`depth` : mandatory
+The Amplitude of the LFO wave.
+
+<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
+
+`typewave` : mandatory
+The type of the wave using by the LFO.
+
+<ins>Type</ins> : func([float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)*[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)->[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0))
+
+
+`wave` : mandatory
+The wave you want to modify.
+
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)>
+
+#### Returns:
+Return a modified wave with a LFO applied to a low pass filter.
+<ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | ([wave](/ALGOSUP_2022_Project_3_B/audio/wave))
+
+
+
