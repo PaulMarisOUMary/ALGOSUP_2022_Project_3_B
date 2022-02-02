@@ -64,4 +64,4 @@ Then in your `.fsproj` file, add the following lines:
 ```
 
 ### Next step:
-[Quickstart](/ALGOSUP_2022_Project_3_B/audio/quickstart)
+[Quickstart](/ALGOSUP_2022_Project_3_B/quickstart)
