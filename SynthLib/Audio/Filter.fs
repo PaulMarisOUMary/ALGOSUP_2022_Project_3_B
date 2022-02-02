@@ -100,10 +100,40 @@ module Filter =
                 yield wave.[i] * (1.-(currentlfo*depth))
         ]
 
-    let LfoFreq (rate: float)(depth: float)(typewave)(wave : List<float>) = // apply LFO to an low pass filter in order to variate the frequencie
-        // rate : frequency between 0 to 20 Hz
-        // depth : amplitude of the wave (float -> 0 à 1) call the function amplitude with this
 
+    type waveTypeFilter =
+    | Sine
+    | Square
+    | Triangle
+    | Sawtooth
+
+    let LfoFreq (rate: float)(depth: float) note octave (typewave : waveTypeFilter)(wave : List<float>) = // apply LFO to an low pass filter in order to variate the frequencie
+        // rate : frequency between 0 to 10 Hz
+        // depth : amplitude of the effect (float -> 0 à 10)
+        [
+            let frq = Note.GetFrequency note octave
+            let pi = Math.PI
+
+            let (mod) x y=
+              (x%y + y)%y
+
+            match typewave with
+            | waveTypeFilter.Sine -> 
+                for i in 0..wave.Length-1 do
+                    yield Math.Sin(2.*pi*frq*(float i/float sampleRate)+(depth*frq*Math.Sin(2.*pi*rate*(float i/float sampleRate))))
+            | waveTypeFilter.Square ->
+                for i in 0..wave.Length-1 do
+                    yield if Math.Sin(2.*pi*frq*(float i/float sampleRate)+(depth*frq*Math.Sin(2.*pi*rate*(float i/float sampleRate)))) > 0. then 1. else - 1.
+            | waveTypeFilter.Triangle ->
+                for i in 0..wave.Length-1 do
+                    yield   Math.Asin(Math.Sin(2.*pi*frq*(float i/float sampleRate)+(depth*frq*Math.Sin(2.*pi*rate*(float i/float sampleRate))))) * (2.0/pi)  
+            | waveTypeFilter.Sawtooth -> 
+                for i in 0..wave.Length-1 do
+                    yield ((2. * (float i / float sampleRate) * (2.*pi*frq*(float i/float sampleRate)+(depth*frq*Math.Sin(2.*pi*rate*(float i/float sampleRate))))) mod 2.) - 1.
+            
+        ]
+
+    let LfoHighPass (rate:float)(depth:float)(typewave)(wave:List<float>) =
         [
             let pi = Math.PI
 
