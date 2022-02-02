@@ -6,14 +6,35 @@ open SynthLib.Audio
 module ExampleSongs =
 
     let note lenght note octave =
-        Wave.MakeNote Wave.Square lenght note octave
-        |> Envelope.apply 0.20 0.1 0.45 0.8
-        |> Filter.Flange
+        Wave.MakeNote Wave.Sine lenght note octave
+        |> Envelope.apply 0.1 0.06 0.1 0.8
+        //|> Filter.HighPass 10000.
+        //|> Filter.Flange
+
+    let BPM = 160.
+    let timeNote = 1./(BPM/60.)
+    let round = 4. * timeNote
+    let white = 2. * timeNote
+    let black = timeNote
+    let crooked = timeNote / 2.
+    let semiCrooked = timeNote / 4.
+
 
     let fullNote = note 1.
     let halfNote = note 0.5
     let quarterNote = note 0.25
     let eightNote = note 0.125
+
+
+    // let test () : float list =
+    //     seq{
+    //         yield! note round Note.C 2
+    //         yield! note round Note.Gs 4
+    //         yield! note round Note.B 4
+
+
+    //     } |> Seq.toList
+
 
     let MoonSong () : float list =
         seq {
@@ -29,8 +50,7 @@ module ExampleSongs =
             yield! halfNote Note.D 4
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
-        } |> Seq.toList
-
+        } |> Seq.toList |> Filter.Reverb 5 0.25
 
     let MarioTheme () : float list = 
         seq {
@@ -1095,3 +1115,183 @@ module ExampleSongs =
             yield! eightNote Note.B 4
 
         } |> Seq.toList
+
+    let RunningInThe90 () : float list =
+        seq {
+            
+            for i in 0..3 do
+                for j in 0..1 do
+                    yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+                    yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+
+                    yield! note black Note.REST 4
+
+                yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+                yield! Wave.Combine ([note crooked Note.As 4;note crooked Note.D 5])
+                yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+                yield! Wave.Combine ([note crooked Note.Gs 4;note crooked Note.C 5])
+                yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+                yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+
+            for i in 0..1 do
+                yield! note crooked Note.A 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+            
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.D 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+
+            for i in 0..1 do
+                yield! note crooked Note.A 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+
+            yield! note white Note.C 5
+            yield! note black Note.C 5
+            yield! note black Note.B 4
+
+
+            for i in 0..1 do
+                yield! note crooked Note.A 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+            
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.D 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+
+            for i in 0..1 do
+                yield! note crooked Note.A 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+
+            yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+            yield! Wave.Combine ([note crooked Note.As 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+            yield! Wave.Combine ([note crooked Note.Gs 4;note crooked Note.C 5])
+            yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+        
+            for i in 0..1 do
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.D 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+
+            for i in 0..1 do
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+            
+            
+            yield! Wave.Combine ([note semiCrooked Note.A 4;note semiCrooked Note.C 5])
+            yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.C 5])
+            yield! Wave.Combine ([note semiCrooked Note.A 4;note semiCrooked Note.C 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note semiCrooked Note.C 5;note semiCrooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.D 5])
+            yield! Wave.Combine ([note semiCrooked Note.C 5;note semiCrooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+
+            for i in 0..1 do
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+            yield! note semiCrooked Note.C 5
+            yield! note semiCrooked Note.B 4
+            yield! note semiCrooked Note.G 4
+            yield! note crooked Note.D 5
+            yield! note semiCrooked Note.B 4
+            yield! note crooked Note.G 4
+
+            for i in 0..1 do
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 4
+                yield! note semiCrooked Note.A 4
+                yield! note semiCrooked Note.E 5
+                yield! note semiCrooked Note.D 5
+                yield! note semiCrooked Note.C 5
+                yield! note crooked Note.G 4
+
+            yield! Wave.Combine ([note crooked Note.C 5;note crooked Note.E 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+            yield! Wave.Combine ([note crooked Note.As 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+            yield! Wave.Combine ([note crooked Note.Gs 4;note crooked Note.C 5])
+            yield! Wave.Combine ([note crooked Note.A 4;note crooked Note.Cs 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
+            yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
+
+        }|>Seq.toList

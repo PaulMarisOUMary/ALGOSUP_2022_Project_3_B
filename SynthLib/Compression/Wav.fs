@@ -1,11 +1,12 @@
 ﻿namespace SynthLib.Compression
 
-open System.IO
-open System
-open SynthLib.Variables
 
 module Wav = 
 
+    open System.IO
+    open System
+    open SynthLib.Variables
+    
     let EncodeWav (path:string) (data:byte[]) =
         
         let stream = File.Create(path)
