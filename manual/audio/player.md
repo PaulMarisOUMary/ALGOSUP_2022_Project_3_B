@@ -16,7 +16,7 @@ Methods:
 method Play (loop:boolean) (wave: float list)
 ```
 Play the sound wave live.
-:warning: `arm64` architecture is not compatible yet.
+:warning: `arm64` architecture is not yet compatible.
 
 #### Example Usage:
 ```fsharp
