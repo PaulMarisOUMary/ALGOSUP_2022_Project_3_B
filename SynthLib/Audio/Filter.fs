@@ -153,37 +153,6 @@ module Filter =
                 yield temp 
                 last <- temp
         ]
-        
-    open SynthLib.Audio.Note
 
-    let note lenght note octave =
-        Wave.MakeNote Wave.Sine lenght note octave
-        
-    let fullNote = note 1.
-    let halfNote = note 0.5
-    let quarterNote = note 0.25
-    let eightNote = note 0.125
-    
-    
-    let MoonSong =
-        seq {
-            yield! halfNote Note.C 4
-            yield! halfNote Note.C 4
-            yield! halfNote Note.C 4
-            yield! halfNote Note.D 4
-            yield! fullNote Note.E 4
-            yield! fullNote Note.D 4
-            yield! halfNote Note.C 4
-            yield! halfNote Note.E 4
-            yield! halfNote Note.D 4
-            yield! halfNote Note.D 4
-            yield! fullNote Note.C 4
-            yield! fullNote Note.REST 4
-         } |> Seq.toList
-    
-    let song = MoonSong |> SynthLib.Audio.Player.Play true 
-    
-         
-    
             
            
