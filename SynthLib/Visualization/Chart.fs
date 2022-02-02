@@ -2,7 +2,7 @@
 
 
 
-module Visualization =
+module Chart =
 
     open SynthLib.Variables
     open XPlot.Plotly

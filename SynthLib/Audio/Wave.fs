@@ -32,28 +32,7 @@ module Wave =
         ]
 
     let Combine (args: list<list<float>>) =
-(*
-        let sortedargs = args |> List.sortByDescending(fun x -> x.Length)
-        let mutable lastindex = (sortedargs |> List.tail |> List.head |> List.length ) - 1
-        let mutable out = new List<float>()
-//        for i in 0.. 1.. sortedargs|>
- //           for
 
-        0
-        let (sortedargs : List<List<float>>) = args |> List.sortBy(fun x -> x.Length)
-        let maxlen = sortedargs.[((sortedargs |> List.length ) - 2) ] |> List.length
-        let mutable min = 0
-        [
-            for x in 0.. 1.. maxlen - 1 do
-                if (x >= sortedargs[min].Length ) then min <- min + 1 else
-                yield
-                    [
-                        for y in min.. 1 .. (sortedargs.Length - 2)  do
-                            yield sortedargs.[y].[x]
-                    ] |> List.sum
-        ]
-
-        *)
         let maxlength = args |> List.map List.length |> List.max
         let refactorarraywith0 = [
             for x in args do
@@ -62,6 +41,7 @@ module Wave =
                         if y > x.Length-1 then yield 0. else yield x.[y]
                 ]
         ]
+
         [
              for y in 0.. 1 ..maxlength-1 do
                 let listtosum = [for x in refactorarraywith0 do yield x.[y]]
