@@ -17,6 +17,9 @@ Methods:
 - [MakeNote](#makenote)
 - [Combine](#combine)
 
+Types:
+`none`
+
 ## Sine
 ---
 ```fsharp
