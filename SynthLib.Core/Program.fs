@@ -18,7 +18,7 @@ module Program =
 
 
         // set Synth.Variables : samplerate env variable to true to save .Wav
-        let bitarray = SynthLib.Audio.Wave.Combine([Wave.MakeNote Wave.Square 2. Note.E 4; Wave.MakeNote Wave.Square 2. Note.C 4]) |> Wav.ToByteArray
+        let bitarray = MarioTheme |> Wav.ToByteArray
 
         Wav.EncodeWav @"../../../../test.wav" bitarray
         

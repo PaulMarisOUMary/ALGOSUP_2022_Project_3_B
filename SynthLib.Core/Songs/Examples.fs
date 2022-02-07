@@ -36,8 +36,8 @@ module ExampleSongs =
     //     } |> Seq.toList
 
 
-    let MoonSong () : float list =
-        seq {
+    let MoonSong : float list =
+        [
             yield! halfNote Note.C 4
             yield! halfNote Note.C 4
             yield! halfNote Note.C 4
@@ -50,11 +50,10 @@ module ExampleSongs =
             yield! halfNote Note.D 4
             yield! fullNote Note.C 4
             yield! fullNote Note.REST 4
-        } |> Seq.toList |> Filter.Reverb 5 0.25
+        ]
 
-    let MarioTheme () : float list = 
-        seq {
-            
+    let MarioTheme : float list = 
+        [   
             yield! note 1. Note.REST 4
 
             yield! Wave.Combine ([ note 0.15 Note.Fs 4; note 0.15 Note.E 4 ])
@@ -193,10 +192,10 @@ module ExampleSongs =
             yield! note 1.2 Note.REST 4
 
 
-        } |> Seq.toList
+        ]
 
-    let PirateOfCaraiban () : float list =
-        seq {
+    let PirateOfCaraiban : float list =
+        [
             yield! quarterNote Note.D 4
             yield! halfNote Note.D 4
             yield! quarterNote Note.D 4
@@ -364,11 +363,10 @@ module ExampleSongs =
             yield! eightNote Note.D 5
             yield! note 0.8 Note.A 4
     
-        }|>Seq.toList
+        ]
 
-    let Doom () : float list =
-        
-        seq{
+    let Doom : float list =
+        [
 
             yield! eightNote Note.Ds 3
             yield! eightNote Note.Ds 3
@@ -667,10 +665,10 @@ module ExampleSongs =
             yield! quarterNote Note.Ds 3
             yield! halfNote Note.A 3
 
-        }|>Seq.toList
+        ]
 
-    let Zelda () : float list =
-        seq {
+    let Zelda : float list =
+        [
             yield! fullNote Note.C 4
             yield! quarterNote Note.G 3
             yield! quarterNote Note.G 3
@@ -928,10 +926,10 @@ module ExampleSongs =
             yield! quarterNote Note.G 3
             yield! quarterNote Note.G 3
             yield! note 0.825 Note.C 4
-        } |> Seq.toList
+        ]
 
-    let Thunder() : float list =
-        seq {
+    let Thunder : float list =
+        [
             yield! eightNote Note.Ds 5
             yield! eightNote Note.B 4
             yield! eightNote Note.Fs 5
@@ -1114,10 +1112,10 @@ module ExampleSongs =
             yield! eightNote Note.Ds 5
             yield! eightNote Note.B 4
 
-        } |> Seq.toList
+        ]
 
-    let RunningInThe90 () : float list =
-        seq {
+    let RunningInThe90 : float list =
+        [
             
             for i in 0..3 do
                 for j in 0..1 do
@@ -1294,4 +1292,4 @@ module ExampleSongs =
             yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.D 5])
             yield! Wave.Combine ([note crooked Note.B 4;note crooked Note.Ds 5])
 
-        }|>Seq.toList
+        ]
