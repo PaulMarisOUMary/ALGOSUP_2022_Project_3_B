@@ -10,6 +10,9 @@ Attributes:
 Methods:
 - [apply](#apply)
 
+Types:
+`none`
+
 ## apply
 ---
 ```fsharp

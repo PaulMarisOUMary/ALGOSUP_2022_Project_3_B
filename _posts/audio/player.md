@@ -10,6 +10,9 @@ Attributes:
 Methods:
 - [Play](#play)
 
+Types:
+`none`
+
 ## Play
 ---
 ```fsharp
@@ -36,3 +39,6 @@ The wave to play.
 More information about the wave can be found in the [Wave](/ALGOSUP_2022_PROJECT_B/_posts/audio/wave) manual.
 
 <ins>Type</ins> : [list](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0)<[float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)> | ([wave](/ALGOSUP_2022_Project_3_B/_posts/audio/wave))
+
+#### Returns :
+<ins>Type</ins> : [void](https://docs.microsoft.com/en-us/dotnet/api/system.void?view=net-6.0)

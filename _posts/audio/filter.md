@@ -18,6 +18,9 @@ Methods:
 - [LfoAmp](#lfoamp)
 - [LfoFreq](#lfofreq)
 
+Types:
+`none`
+
 ## Amplitude
 ---
 ```fsharp

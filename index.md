@@ -9,7 +9,7 @@ An audio library for F#.
 
 ## Manuals References :
 Modules:
-- [Audio](/ALGOSUP_2022_Project_3_B/audio/audio)
+- [Audio](/ALGOSUP_2022_Project_3_B/_posts/audio/audio)
     - [Audio.Envelope](/ALGOSUP_2022_Project_3_B/_posts/audio/envelope)
     - [Audio.Filter](/ALGOSUP_2022_Project_3_B/_posts/audio/filter)
     - [Audio.Note](/ALGOSUP_2022_Project_3_B/_posts/audio/note)
