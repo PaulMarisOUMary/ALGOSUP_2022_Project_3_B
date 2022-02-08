@@ -7,17 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Songs\Examples.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SynthLib\SynthLib.fsproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Songs\" />
+    <Folder Include="Examples\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Songs\Examples.fs" />
+    <Compile Include="Examples\PlaySoundLive.fs" />
+    <Compile Include="Examples\CreateSound.fs" />
+    <Compile Include="Examples\VisualizeSound.fs" />
+    <Compile Include="Examples\EncodeSoundToWav.fs" />
+    <Compile Include="Examples\ApplyFilterToSound.fs" />
+    <Compile Include="Examples\ApplyEnvelopeToSound.fs" />
+    <Compile Include="Program.fs" />
+    <ProjectReference Include="..\SynthLib\SynthLib.fsproj" />
     <PackageReference Include="FftSharp" Version="1.1.4" />
     <PackageReference Include="SFML.Audio" Version="2.5.0" />
   </ItemGroup>

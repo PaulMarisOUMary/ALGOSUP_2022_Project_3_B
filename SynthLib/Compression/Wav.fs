@@ -53,7 +53,5 @@ module Wav =
         wave |> Array.mapi(fun i x -> BitConverter.ToInt16 (data,i) ) |> Array.map(fun x -> (float x) / 2.)
 
     let ToByteArray (data:float list) =
-        data
-        |> List.map (fun (x:float) -> int16 (x * 32767.))
-        |> List.map(fun x -> System.BitConverter.GetBytes(x))
-        |>  List.reduce Array.append
+        let bdata = data |> List.map (fun (x:float) -> System.BitConverter.GetBytes( (int16 ( x * 32767.))) )
+        bdata |> List.reduce Array.append

@@ -43,15 +43,3 @@ type FilterTest() =
 
         // Assert
         Assert.AreEqual(assertValue, false)
-
-    [<Test>]
-    member x.EchoTest() =
-        Assert.IsTrue(true)
-
-    [<Test>]
-    member x.FlangeTest() =
-        Assert.IsTrue(true)
-
-    [<Test>]
-    member x.ReverbeTest() =
-        Assert.IsTrue(true)
