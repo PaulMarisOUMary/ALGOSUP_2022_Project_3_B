@@ -1,25 +1,12 @@
-# Module Variables
+# SynthLib.Visualization
 
-## Variables
+## Visualization
 ```fsharp
-module Variables
+namespace SynthLib.Visualization
 ```
-Attributes:
-- [sampleRate](#sampleRate)
 
-Methods:
-`none`
+Modules:
+- [Chart](/ALGOSUP_2022_Project_3_B/_posts/visualization/chart)
+    - [Chart](/ALGOSUP_2022_Project_3_B/_posts/visualization/chart#chart)
+    - [ChartBar](/ALGOSUP_2022_Project_3_B/_posts/visualization/chart#chartbar)
 
-Types:
-`none`
-
-## sampleRate
----
-```fsharp
-let sampleRate
-```
-Define how much time is between each sample.
-
-#### Returns:
-Return a wave.
-<ins>Type</ins> : [float](https://docs.microsoft.com/en-us/dotnet/api/system.double?view=net-6.0)
