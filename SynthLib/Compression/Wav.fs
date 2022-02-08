@@ -1,14 +1,14 @@
 ﻿namespace SynthLib.Compression
 
 
-module Wav = 
+module Wav =
 
     open System.IO
     open System
     open SynthLib.Variables
-    
+
     let EncodeWav (path:string) (data:byte[]) =
-        
+
         let stream = File.Create(path)
         use writer = new BinaryWriter(stream)
 
@@ -20,19 +20,19 @@ module Wav =
         writer.Write(16) //format size
         writer.Write(1s) //Default value is 1 for uncompressed data
         writer.Write(1s) //Default value is 1 for mono, 2 for stereo etc
-        writer.Write(sampleRate)         
-        let (byteRate:int) =  sampleRate * 16
+        writer.Write(sampleRate)
+        let (byteRate:int) =  sampleRate * 8
         writer.Write(byteRate) //ByteRate = sampleRate * ByteperSample
-   
+
         writer.Write(1s) //Default value is 1 for uncompressed data
-        writer.Write(16s) //Default value is 1 for uncompressed data
+        writer.Write(8s) //Default value is 1 for uncompressed data
 
 
         writer.Write("data"B)
         writer.Write(data.Length)
         writer.Write(data)
 
-    let DecodeWav (path:string) = 
+    let DecodeWav (path:string) =
 
         use reader = new BinaryReader(File.Open(path,FileMode.Open,FileAccess.Read))
         ignore(reader.ReadChars(4))
@@ -53,7 +53,4 @@ module Wav =
         wave |> Array.mapi(fun i x -> BitConverter.ToInt16 (data,i) ) |> Array.map(fun x -> (float x) / 2.)
 
     let ToByteArray (data:float list) =
-        data
-        |> List.map (fun (x:float) -> int16 (x * 32767.))
-        |> List.map(fun x -> System.BitConverter.GetBytes(x))
-        |>  List.reduce Array.append
+        data |> List.map (fun (x:float) -> byte ( int8 (x * 127.)) )  |> List.toArray
