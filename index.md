@@ -19,5 +19,4 @@ Modules:
     - [Compression.Wav](/ALGOSUP_2022_Project_3_B/_posts/compression/wav)
 - [Visualization](/ALGOSUP_2022_Project_3_B/_posts/visualization/visualization)
     - [Visualization.Chart](/ALGOSUP_2022_Project_3_B/_posts/visualization/chart)
-    - [Visualization.Spectroscope](/ALGOSUP_2022_Project_3_B/_posts/visualization/spectroscope)
 - [Variables](/ALGOSUP_2022_Project_3_B/_posts/variables)
