@@ -25,17 +25,6 @@ module ExampleSongs =
     let quarterNote = note 0.25
     let eightNote = note 0.125
 
-
-    // let test () : float list =
-    //     seq{
-    //         yield! note round Note.C 2
-    //         yield! note round Note.Gs 4
-    //         yield! note round Note.B 4
-
-
-    //     } |> Seq.toList
-
-
     let MoonSong : float list =
         [
             yield! halfNote Note.C 4
