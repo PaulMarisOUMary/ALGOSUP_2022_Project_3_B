@@ -58,3 +58,6 @@ ourWave |> Player.Play true
 ```
 
 More details on Manual : module [Player](/ALGOSUP_2022_Project_3_B/_posts/audio/player).
+
+### More
+More examples can be found [on github](https://github.com/PaulMarisOUMary/ALGOSUP_2022_Project_3_B/tree/main/SynthLib.Core/Examples)
