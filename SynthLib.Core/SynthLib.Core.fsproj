@@ -18,6 +18,8 @@
     <Compile Include="Examples\EncodeSoundToWav.fs" />
     <Compile Include="Examples\ApplyFilterToSound.fs" />
     <Compile Include="Examples\ApplyEnvelopeToSound.fs" />
+    <Compile Include="Examples\ChordTwoSounds.fs" />
+    <None Include="Examples\AdvancedSound.fsx" />
     <Compile Include="Program.fs" />
     <ProjectReference Include="..\SynthLib\SynthLib.fsproj" />
     <PackageReference Include="FftSharp" Version="1.1.4" />

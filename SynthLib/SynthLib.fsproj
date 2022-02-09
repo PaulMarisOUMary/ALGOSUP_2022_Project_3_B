@@ -18,6 +18,7 @@
     <Compile Include="Visualization\Chart.fs" />
     <Compile Include="Visualization\Spectroscope.fs" />
     <Compile Include="Compression\Wav.fs" />
+    <Compile Include="Compression\MP3.fs" />
     <Compile Include="Audio\Player.fs" />
     <Compile Include="Audio\Envelope.fs" />
     <Compile Include="Audio\Notes.fs" />
@@ -27,7 +28,7 @@
     <PackageReference Include="XPlot.Plotly" Version="4.0.6">
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>
-    <PackageReference Include="FftSharp" Version="1.1.4"> 
+    <PackageReference Include="FftSharp" Version="1.1.4">
       <GeneratePathProperty></GeneratePathProperty>
     </PackageReference>
     <PackageReference Include="XPlot.GoogleCharts" Version="3.0.1">

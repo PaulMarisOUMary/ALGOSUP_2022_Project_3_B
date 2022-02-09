@@ -11,7 +11,7 @@ module Program =
     let main _  =
 
         // set Synth.Variables : samplerate env variable to true to save .wav
-        let bitarray = MarioTheme |> Wav.ToByteArray
+        let bitarray = Titanic |> Wav.ToByteArray
 
         Wav.EncodeWav @"../../../../test.wav" bitarray
 
